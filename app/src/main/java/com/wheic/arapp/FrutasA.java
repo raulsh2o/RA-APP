@@ -41,7 +41,7 @@ import android.media.MediaPlayer;
 
 
 public class FrutasA extends AppCompatActivity {
-    MediaPlayer audiomanzana, audiopera, audiobanana, audioo, audiou;
+    MediaPlayer audiomanzana, audiopera, audiobanana, audiouva, audiosandia, audiomelon, audiopina;
     private ArFragment arCam; //object of ArFragment Class
 
     private int clickNo = 0; //helps to render the 3d model only once when we tap the screen
@@ -49,7 +49,7 @@ public class FrutasA extends AppCompatActivity {
     private List<AnchorNode> anchorNodeList = new ArrayList<>();
     private AnchorNode currentSelectedAnchorNode = null;
 
-    private ModelRenderable pera, manzana, banana,vocali, vocalo, vocalu;
+    private ModelRenderable pera, manzana, banana,uva,sandia,melon,pina;
     private int Status1 = 0;
     private String information = "";
 
@@ -87,6 +87,10 @@ public class FrutasA extends AppCompatActivity {
         audiomanzana = MediaPlayer.create(this,R.raw.famanzana);
         audiopera = MediaPlayer.create(this,R.raw.fapera);
         audiobanana = MediaPlayer.create(this,R.raw.fabanana);
+        audiouva = MediaPlayer.create(this,R.raw.fauva);
+        audiosandia = MediaPlayer.create(this,R.raw.fasandia);
+        audiomelon = MediaPlayer.create(this,R.raw.famelon);
+        audiopina = MediaPlayer.create(this,R.raw.fapina);
         /*audioi = MediaPlayer.create(this,R.raw.vaudioi);
         audioo = MediaPlayer.create(this,R.raw.vaudioo);
         audiou = MediaPlayer.create(this,R.raw.vaudiou);*/
@@ -117,6 +121,50 @@ public class FrutasA extends AppCompatActivity {
                 .setIsFilamentGltf(true) //maybe is possible remove for other extension 3D
                 .build()
                 .thenAccept(renderable -> banana=renderable)
+                .exceptionally(throwable -> {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage("Something is not right gato1" + throwable.getMessage()).show();
+                    return null;
+                });
+
+        ModelRenderable.builder()
+                .setSource(this, R.raw.fuva)
+                .setIsFilamentGltf(true) //maybe is possible remove for other extension 3D
+                .build()
+                .thenAccept(renderable -> uva=renderable)
+                .exceptionally(throwable -> {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage("Something is not right gato1" + throwable.getMessage()).show();
+                    return null;
+                });
+
+        ModelRenderable.builder()
+                .setSource(this, R.raw.fsandia)
+                .setIsFilamentGltf(true) //maybe is possible remove for other extension 3D
+                .build()
+                .thenAccept(renderable -> sandia=renderable)
+                .exceptionally(throwable -> {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage("Something is not right gato1" + throwable.getMessage()).show();
+                    return null;
+                });
+
+        ModelRenderable.builder()
+                .setSource(this, R.raw.fmelon)
+                .setIsFilamentGltf(true) //maybe is possible remove for other extension 3D
+                .build()
+                .thenAccept(renderable -> melon=renderable)
+                .exceptionally(throwable -> {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage("Something is not right gato1" + throwable.getMessage()).show();
+                    return null;
+                });
+
+        ModelRenderable.builder()
+                .setSource(this, R.raw.fpina)
+                .setIsFilamentGltf(true) //maybe is possible remove for other extension 3D
+                .build()
+                .thenAccept(renderable -> pina=renderable)
                 .exceptionally(throwable -> {
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setMessage("Something is not right gato1" + throwable.getMessage()).show();
@@ -232,6 +280,10 @@ public class FrutasA extends AppCompatActivity {
         Button Pera = (Button) findViewById(R.id.id_Pera);
         Button Manzana = (Button) findViewById(R.id.id_Manzana);
         Button Banana = (Button) findViewById(R.id.id_Banana);
+        Button Uva = (Button) findViewById(R.id.id_Uva);
+        Button Sandia = (Button) findViewById(R.id.id_Sandia);
+        Button Melon = (Button) findViewById(R.id.id_Melon);
+        Button Pina = (Button) findViewById(R.id.id_Piña);
         Button informacion = (Button) findViewById(R.id.id_informacion);
         /*Button Vocali = (Button) findViewById(R.id.id_vocali);
         Button Vocalo = (Button) findViewById(R.id.id_vocalo);
@@ -313,6 +365,78 @@ public class FrutasA extends AppCompatActivity {
                 toast12.show();*/
                 //************************************************************
                 Status1 = 3;
+                if (currentSelectedAnchorNode != null) {
+                    //Get the current Pose and transform it then set a new anchor at the new pose
+                    Session session = arCam.getArSceneView().getSession();
+                    Anchor currentAnchor = currentSelectedAnchorNode.getAnchor();
+                    Pose oldPose = currentAnchor.getPose();
+                    Pose newPose = oldPose.compose(Pose.makeTranslation(0,0.05f,0));
+                    currentSelectedAnchorNode = moveRenderable(currentSelectedAnchorNode, newPose);
+                }
+            }
+        });
+
+        Uva.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                /*toast12.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toast12.show();*/
+                //************************************************************
+                Status1 = 4;
+                if (currentSelectedAnchorNode != null) {
+                    //Get the current Pose and transform it then set a new anchor at the new pose
+                    Session session = arCam.getArSceneView().getSession();
+                    Anchor currentAnchor = currentSelectedAnchorNode.getAnchor();
+                    Pose oldPose = currentAnchor.getPose();
+                    Pose newPose = oldPose.compose(Pose.makeTranslation(0,0.05f,0));
+                    currentSelectedAnchorNode = moveRenderable(currentSelectedAnchorNode, newPose);
+                }
+            }
+        });
+
+        Sandia.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                /*toast12.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toast12.show();*/
+                //************************************************************
+                Status1 = 5;
+                if (currentSelectedAnchorNode != null) {
+                    //Get the current Pose and transform it then set a new anchor at the new pose
+                    Session session = arCam.getArSceneView().getSession();
+                    Anchor currentAnchor = currentSelectedAnchorNode.getAnchor();
+                    Pose oldPose = currentAnchor.getPose();
+                    Pose newPose = oldPose.compose(Pose.makeTranslation(0,0.05f,0));
+                    currentSelectedAnchorNode = moveRenderable(currentSelectedAnchorNode, newPose);
+                }
+            }
+        });
+
+        Melon.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                /*toast12.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toast12.show();*/
+                //************************************************************
+                Status1 = 6;
+                if (currentSelectedAnchorNode != null) {
+                    //Get the current Pose and transform it then set a new anchor at the new pose
+                    Session session = arCam.getArSceneView().getSession();
+                    Anchor currentAnchor = currentSelectedAnchorNode.getAnchor();
+                    Pose oldPose = currentAnchor.getPose();
+                    Pose newPose = oldPose.compose(Pose.makeTranslation(0,0.05f,0));
+                    currentSelectedAnchorNode = moveRenderable(currentSelectedAnchorNode, newPose);
+                }
+            }
+        });
+
+        Pina.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                /*toast12.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toast12.show();*/
+                //************************************************************
+                Status1 = 7;
                 if (currentSelectedAnchorNode != null) {
                     //Get the current Pose and transform it then set a new anchor at the new pose
                     Session session = arCam.getArSceneView().getSession();
@@ -467,14 +591,24 @@ public class FrutasA extends AppCompatActivity {
                 information = "La banana es una de las frutas más completas para los pequeños es el plátano. Contiene potasio, que beneficia su desarrollo óseo, hidratos de carbono, que lo llenará de energía durante todo el día.";
                 break;
             case 4:
-                newMarkAnchorNode.setRenderable(vocalo);
-                audioo.start();
-                information = "";
+                newMarkAnchorNode.setRenderable(uva);
+                audiouva.start();
+                information = "La uva es una fruta carnosa que nace en largos racimos formados por granos redondos u ovalados, cuyo diámetro medio es de 1,6 centímetros.";
                 break;
             case 5:
-                newMarkAnchorNode.setRenderable(vocalu);
-                audiou.start();
-                information = "";
+                newMarkAnchorNode.setRenderable(sandia);
+                audiosandia.start();
+                information = "La sandía es un fruto grande y de forma más o menos esférica que suele consumirse cruda como postre. Su pulpa es de color rojizo o amarillento y de sabor dulce.";
+                break;
+            case 6:
+                newMarkAnchorNode.setRenderable(melon);
+                audiomelon.start();
+                information = "El melón puede ser redondo o alargado, de corteza amarilla, verde o combinada según la variedad. La pulpa es aromática, jugosa y dulce.";
+                break;
+            case 7:
+                newMarkAnchorNode.setRenderable(pina);
+                audiopina.start();
+                information = "La piña madura tiene una fragancia muy singular. Es de hermoso color y agradable sabor agridulce. Se puede comer cruda o como ingrediente en zumos, conservas, licores, etc.";
                 break;
             default:
             break;
