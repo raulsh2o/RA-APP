@@ -119,6 +119,11 @@ androidx.constraintlayout.widget.ConstraintLayout-->
         </LinearLayout>
     </HorizontalScrollView>
 </LinearLayout>
-
+    <Button
+        android:id="@+id/id_informacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="Información" />
 </RelativeLayout>
  <!--   </androidx.constraintlayout.widget.ConstraintLayout>-->

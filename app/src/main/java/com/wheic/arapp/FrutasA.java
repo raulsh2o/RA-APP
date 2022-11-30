@@ -51,6 +51,8 @@ public class FrutasA extends AppCompatActivity {
 
     private ModelRenderable pera, manzana, banana,vocali, vocalo, vocalu;
     private int Status1 = 0;
+    private String information = "";
+
     //****************************************************************
     public static boolean checkSystemSupport(Activity activity) {
 
@@ -230,6 +232,7 @@ public class FrutasA extends AppCompatActivity {
         Button Pera = (Button) findViewById(R.id.id_Pera);
         Button Manzana = (Button) findViewById(R.id.id_Manzana);
         Button Banana = (Button) findViewById(R.id.id_Banana);
+        Button informacion = (Button) findViewById(R.id.id_informacion);
         /*Button Vocali = (Button) findViewById(R.id.id_vocali);
         Button Vocalo = (Button) findViewById(R.id.id_vocalo);
         Button Vocalu = (Button) findViewById(R.id.id_vocalu);*/
@@ -239,6 +242,31 @@ public class FrutasA extends AppCompatActivity {
         String file12 ="click Iguana 2";
         Toast toast12 = Toast.makeText(this, file12, Toast.LENGTH_SHORT);
 */
+        informacion.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //Status1 = 1;
+                /*FragmentManager fragmentManager = getSupportFragmentManager();
+                DialogoAlerta dialogo = new DialogoAlerta();
+                dialogo.show(fragmentManager, "tagAlerta");
+                */
+
+              /*  builder.setMessage("Mensaje de Animal")
+                        .setTitle("Información")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });*/
+                AlertDialog.Builder builder = new AlertDialog.Builder(FrutasA.this);
+                builder.setIcon(R.mipmap.ic_launcher).
+                        setMessage(information).
+                        setTitle("Información:");
+                AlertDialog alertDialog=builder.create();
+                alertDialog.show();
+            }
+        });
+
         Pera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -425,23 +453,28 @@ public class FrutasA extends AppCompatActivity {
             case 1:
                 newMarkAnchorNode.setRenderable(pera);
                 audiopera.start();
+                information = "La pera es una fruta en forma de bombilla; su cáscara es lisa, la cual puede ser de color verde, amarillo, café o rojizo. La pulpa es blanca y jugosa";
             break;
 
             case 2:
                 newMarkAnchorNode.setRenderable(manzana);
                 audiomanzana.start();
+                information = "La manzana puede ser de color verde, amarilla o rojiza, y la pulpa, harinosa o crujiente, presenta un sabor que varía entre el agrio y el dulce.";
             break;
             case 3:
                 newMarkAnchorNode.setRenderable(banana);
                 audiobanana.start();
+                information = "La banana es una de las frutas más completas para los pequeños es el plátano. Contiene potasio, que beneficia su desarrollo óseo, hidratos de carbono, que lo llenará de energía durante todo el día.";
                 break;
             case 4:
                 newMarkAnchorNode.setRenderable(vocalo);
                 audioo.start();
+                information = "";
                 break;
             case 5:
                 newMarkAnchorNode.setRenderable(vocalu);
                 audiou.start();
+                information = "";
                 break;
             default:
             break;

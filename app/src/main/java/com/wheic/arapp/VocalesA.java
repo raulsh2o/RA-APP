@@ -52,6 +52,7 @@ public class VocalesA extends AppCompatActivity {
 
     private ModelRenderable vocala, vocale, vocali, vocalo, vocalu;
     private int Status1 = 0;
+    private String information = "";
     //****************************************************************
     public static boolean checkSystemSupport(Activity activity) {
 
@@ -219,12 +220,40 @@ public class VocalesA extends AppCompatActivity {
         Button Vocali = (Button) findViewById(R.id.id_vocali);
         Button Vocalo = (Button) findViewById(R.id.id_vocalo);
         Button Vocalu = (Button) findViewById(R.id.id_vocalu);
+        Button informacion = (Button) findViewById(R.id.id_informacion);
 /*
         String file11 ="click Gato 1";
         Toast toast11 = Toast.makeText(this, file11, Toast.LENGTH_SHORT);
         String file12 ="click Iguana 2";
         Toast toast12 = Toast.makeText(this, file12, Toast.LENGTH_SHORT);
 */
+
+        informacion.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //Status1 = 1;
+                /*FragmentManager fragmentManager = getSupportFragmentManager();
+                DialogoAlerta dialogo = new DialogoAlerta();
+                dialogo.show(fragmentManager, "tagAlerta");
+                */
+
+              /*  builder.setMessage("Mensaje de Animal")
+                        .setTitle("Información")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });*/
+                AlertDialog.Builder builder = new AlertDialog.Builder(VocalesA.this);
+                builder.setIcon(R.mipmap.ic_launcher).
+                        setMessage(information).
+                        setTitle("Información:");
+                AlertDialog alertDialog=builder.create();
+                alertDialog.show();
+            }
+        });
+
+
         Vocala.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -394,23 +423,28 @@ public class VocalesA extends AppCompatActivity {
         {
             case 1:
                 newMarkAnchorNode.setRenderable(vocala);
+                information = "Ana la araña viaja en avión y usa su atuendo de algodón.";
             break;
 
             case 2:
                 newMarkAnchorNode.setRenderable(vocale);
                 audioe.start();
+                information = "Corremos al estadio a ver el elefante que sube la escalera, será emocionante.";
             break;
             case 3:
                 newMarkAnchorNode.setRenderable(vocali);
                 audioi.start();
+                information = "Tengo una idea dice la italiana, voy a imprimir la foto de la iguana.";
                 break;
             case 4:
                 newMarkAnchorNode.setRenderable(vocalo);
                 audioo.start();
+                information = "Que buen ojo tiene ese ogro, caza en el oscuro";
                 break;
             case 5:
                 newMarkAnchorNode.setRenderable(vocalu);
                 audiou.start();
+                information = "Úrsula la urraca mirando el universo, piensa en el unicornio y escribe un verso.";
                 break;
             default:
             break;

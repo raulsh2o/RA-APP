@@ -55,6 +55,7 @@ public class dActivity extends AppCompatActivity {
     private ModelRenderable gato1,dog1,rabbit1,chicken1,horse1,bird1,duck1,cow1;
     private ModelRenderable iguana2;
     private int Status1 = 0;
+    private String information = "";
     //****************************************************************
     public static boolean checkSystemSupport(Activity activity) {
 
@@ -288,12 +289,39 @@ public class dActivity extends AppCompatActivity {
         Button pato1show=(Button) findViewById(R.id.id_pato1);
         Button caballo1show=(Button) findViewById(R.id.id_caballo1);
         Button conejo1show=(Button) findViewById(R.id.id_conejo1);
+        Button informacion = (Button) findViewById(R.id.id_informacion);
 /*
         String file11 ="click Gato 1";
         Toast toast11 = Toast.makeText(this, file11, Toast.LENGTH_SHORT);
         String file12 ="click Iguana 2";
         Toast toast12 = Toast.makeText(this, file12, Toast.LENGTH_SHORT);
 */
+
+        informacion.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //Status1 = 1;
+                /*FragmentManager fragmentManager = getSupportFragmentManager();
+                DialogoAlerta dialogo = new DialogoAlerta();
+                dialogo.show(fragmentManager, "tagAlerta");
+                */
+
+              /*  builder.setMessage("Mensaje de Animal")
+                        .setTitle("Información")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });*/
+                AlertDialog.Builder builder = new AlertDialog.Builder(dActivity.this);
+                builder.setIcon(R.mipmap.ic_launcher).
+                        setMessage(information).
+                        setTitle("Información:");
+                AlertDialog alertDialog=builder.create();
+                alertDialog.show();
+            }
+        });
+
         gato1show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -526,6 +554,7 @@ public class dActivity extends AppCompatActivity {
             case 1:
                 newMarkAnchorNode.setRenderable(gato1);
                 audioCat.start();
+                information = "Los gatos tienen una flexibilidad y agilidad impresionante, pueden saltar desde más de 3 metros de altura. Los gatos pueden rotar sus orejas 180 grados. Los gatos pueden pasar hasta 14 horas dormidos.";
                 //**************************************************
               /*  // Get the animation name.
                 danceData.getName();
@@ -543,30 +572,37 @@ public class dActivity extends AppCompatActivity {
                 //newMarkAnchorNode.setRenderable(iguana2);
                 newMarkAnchorNode.setRenderable(bird1);
                 audioBird.start();
+                information = "Los pájaros son seres extraordinarios y fascinantes: muchas de ellas poseen un plumaje colorido, producen sonidos extraordinarios o pueden volar. Sin embargo, estas también son esenciales para el balance de nuestro ecosistema.";
             break;
             case 3:
                 newMarkAnchorNode.setRenderable(chicken1);
                 audioChicken.start();
+                information = "La gallina doméstica es el ave más abundante en la tierra, hay alrededor de 20 billones de ellas en el mundo. Las hembras se conocen como gallinas, los machos como gallos y las crías como pollos.";
                 break;
             case 4:
                 newMarkAnchorNode.setRenderable(cow1);
                 audioCow.start();
+                information = "La vaca es criada en muchos países distintos alrededor del mundo, para obtener recursos natrales como leche, carne y cuero. En la India, la vaca es considerado un animal sagrado. Fue domesticada en Asia hace 7.000 años.";
                 break;
             case 5:
                 newMarkAnchorNode.setRenderable(dog1);
                 audioDog.start();
+                information = "Los perros son seres sociables y viven en manada con otros perros o con humanos. Suelen vivir unos 13 o 15 años y, algunos como los de raza pequeña, llegan a los 17 años.";
                 break;
             case 6:
                 newMarkAnchorNode.setRenderable(duck1);
                 audioDuck.start();
+                information = "Los patos son aves conocidas como acuáticas, debido a que casi siempre se encuentran cerca del agua, ya sea en forma de lagos, ríos o arroyos. Están relacionados con los gansos y cisnes, otras dos aves acuáticas";
                 break;
             case 7:
                 newMarkAnchorNode.setRenderable(horse1);
                 audioHorse.start();
+                information = "El caballo es un mamífero perteneciente a la familia de los équidos. Existen 86 razas diferentes en el mundo. En la familia del caballo se incluyen tres grupos de mamíferos salvajes.";
                 break;
             case 8:
                 newMarkAnchorNode.setRenderable(rabbit1);
                 audioRabbit.start();
+                information = "Tiene orejas largas de hasta 7 cm las cuales le ayudan a regular la temperatura del cuerpo y una cola muy corta. Sus patas anteriores son más cortas que las posteriores. Mide de 33 a 50 cm en condiciones afables.";
                 break;
             default:
             break;
