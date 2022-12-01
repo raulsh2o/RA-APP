@@ -527,44 +527,44 @@ public class SalvajesA extends AppCompatActivity {
             case 1:
                 newMarkAnchorNode.setRenderable(monkey1);
                 audioMonkey.start();
-                information = "¿Sabías que los monos tienen un 96% de similitud genética con los seres humanos? Por esto mismo es que existen tantos casos de bebés chimpancés criados por seres humanos que adoptan a sus madres y repiten acciones como si fuesen humanos.";
+                information = "El mono es proveniente de la familia de los primates, usas sus extremidades para cazar, comer o hacer otras acciones diferentes.";
             break;
             case 2:
                 newMarkAnchorNode.setRenderable(lion1);
                 audiogLion.start();
-                information = "Los leones son sociables y suelen vivir en manadas. Como todos los felinos, los leones son cuadrúpedos y mamíferos. Poseen una cola larga, un pelaje corto y amarillento, así como una melena rubia u oscura alrededor del cuello en el caso de los machos.";
+                information = "El león es el rey de la selva, es salvaje, fuerte, grande y tiene dientes muy grandes.";
                 break;
             case 3:
                 newMarkAnchorNode.setRenderable(tiger1);
                 audiogTiger.start();
-                information = "Los tigres son los félidos más grandes del mundo. Aunque existen varias subespecies de tigres, la mayoría posee un hermoso pelaje de color anaranjado, el vientre blanco, y múltiples rayas marrones o negras por todo el cuerpo. Estas rayas les ayudan a camuflarse entre la vegetación y son distintas en cada ejemplar.";
+                information = "El tigre es un animal grande, corren muy rápido, son solitarios y cazadores.";
                 break;
             case 4:
                 newMarkAnchorNode.setRenderable(elephant1);
                 audiogElephant.start();
-                information = "Son animales mamíferos, exclusivamente herbívoros cuya característica principal –además del gran tamaño– es su larga trompa y sus enormes orejas. Se organizan en manadas de unos 20 miembros, miden casi 4 metros los ejemplares más grandes y pueden llegar a pesar más de 6.000 kilos";
+                information = "El elefante es el animal terrestre más grande, tiene orejas grandes y su trompa muy larga, tienen ojos pequeños.";
                 break;
             case 5:
                 newMarkAnchorNode.setRenderable(serpiente01);
                 audiogSerpent.start();
                 information = "\n" +
-                        "Las serpientes son unos reptiles que carecen de patas y, sin embargo, se desplazan con facilidad. Poseen un cuerpo muy delgado, pero pueden comer animales mucho más grandes que ellas. Además, algunas especies presentan un veneno tan potente que puede matar a un ser humano.";
+                        "La serpiente es un animal que se arrastra por el suelo, no tiene patas, vota veneno por su boca, su cuerpo es muy largo.";
                 break;
             case 6:
                 newMarkAnchorNode.setRenderable(giraffe1);
                 audioJirafa.start();
-                information = "La jirafa es el animal terrestre más alto del mundo y uno de los protagonistas indiscutibles de la sabana africana. Esta peculiar especie puede llegar a medir 5 metros de altura.";
+                information = "Las jirafas son animales de cuello largo, son de color amarillo con manchas negras y tiene dos cuernos pequeños.";
                 break;
 
             case 7:
                 newMarkAnchorNode.setRenderable(hipopo1);
                 audioHipopo.start();
-                information = "Los hipopótamos son animales voluminosos, cuadrúpedos, con cuerpo rechoncho, en forma de barril, y una cabeza grande de boca ancha y morro grueso. Poseen una piel lisa y sin pelo.";
+                information = "El hipopótamo es un animal de boca enorme con grandes dientes, son grandes y pesados, son muy agresivos y de patas cortas.";
                 break;
             case 8:
                 newMarkAnchorNode.setRenderable(crocodrile1);
                 audioCocodrile.start();
-                information = "Los cocodrilos son reptiles, lo que significa que son de sangre fría, ellos están cubiertos de piel seca y escamosa y tienen una mandíbula y dientes capaces de aplastar huesos.";
+                information = "El cocodrilo   es un animal con 4 patas, se arrastra por el suelo, con una boca enorme y dientes muy grandes, tiene una cola muy larga, y viven en los pantanos, lagos o ríos.";
                 break;
             /*case 20:
                 newMarkAnchorNode.setRenderable(jirafa01);

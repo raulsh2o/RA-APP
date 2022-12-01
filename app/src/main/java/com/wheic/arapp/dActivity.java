@@ -554,7 +554,7 @@ public class dActivity extends AppCompatActivity {
             case 1:
                 newMarkAnchorNode.setRenderable(gato1);
                 audioCat.start();
-                information = "Los gatos tienen una flexibilidad y agilidad impresionante, pueden saltar desde más de 3 metros de altura. Los gatos pueden rotar sus orejas 180 grados. Los gatos pueden pasar hasta 14 horas dormidos.";
+                information = "Mamífero de contextura pequeña, de abundante pelaje y muy suave, son muy cariñoso con los humanos.";
                 //**************************************************
               /*  // Get the animation name.
                 danceData.getName();
@@ -572,37 +572,37 @@ public class dActivity extends AppCompatActivity {
                 //newMarkAnchorNode.setRenderable(iguana2);
                 newMarkAnchorNode.setRenderable(bird1);
                 audioBird.start();
-                information = "Los pájaros son seres extraordinarios y fascinantes: muchas de ellas poseen un plumaje colorido, producen sonidos extraordinarios o pueden volar. Sin embargo, estas también son esenciales para el balance de nuestro ecosistema.";
+                information = "Las aves son seres extraordinarios y fascinantes: muchas de ellas poseen un plumaje colorido, producen sonidos extraordinarios o pueden volar.";
             break;
             case 3:
                 newMarkAnchorNode.setRenderable(chicken1);
                 audioChicken.start();
-                information = "La gallina doméstica es el ave más abundante en la tierra, hay alrededor de 20 billones de ellas en el mundo. Las hembras se conocen como gallinas, los machos como gallos y las crías como pollos.";
+                information = "La gallina es denominado un ave conocida por su cacareo, pone huevos, y está cubierta de plumas de diversos colores";
                 break;
             case 4:
                 newMarkAnchorNode.setRenderable(cow1);
                 audioCow.start();
-                information = "La vaca es criada en muchos países distintos alrededor del mundo, para obtener recursos natrales como leche, carne y cuero. En la India, la vaca es considerado un animal sagrado. Fue domesticada en Asia hace 7.000 años.";
+                information = "La vaca es un animal mamífero, se alimenta del pasto, hierbas, tallos, hojas, semillas y raíces.";
                 break;
             case 5:
                 newMarkAnchorNode.setRenderable(dog1);
                 audioDog.start();
-                information = "Los perros son seres sociables y viven en manada con otros perros o con humanos. Suelen vivir unos 13 o 15 años y, algunos como los de raza pequeña, llegan a los 17 años.";
+                information = "El perro doméstico es un mamífero carnívoro, Su tamaño, forma y pelaje varían en función de la raza de perro, ven bien, usan mayormente su oído y su olfato, sentidos que tienen muy desarrollados y que son muy prácticos para el humano.";
                 break;
             case 6:
                 newMarkAnchorNode.setRenderable(duck1);
                 audioDuck.start();
-                information = "Los patos son aves conocidas como acuáticas, debido a que casi siempre se encuentran cerca del agua, ya sea en forma de lagos, ríos o arroyos. Están relacionados con los gansos y cisnes, otras dos aves acuáticas";
+                information = "El pato es un ave, vive cerca del agua y nadan.";
                 break;
             case 7:
                 newMarkAnchorNode.setRenderable(horse1);
                 audioHorse.start();
-                information = "El caballo es un mamífero perteneciente a la familia de los équidos. Existen 86 razas diferentes en el mundo. En la familia del caballo se incluyen tres grupos de mamíferos salvajes.";
+                information = "Un Caballo es un animal cuadrúpedo perteneciente a la especie de los mamíferos, se caracteriza por su gran tamaño, son animales que galopan y relinchan";
                 break;
             case 8:
                 newMarkAnchorNode.setRenderable(rabbit1);
                 audioRabbit.start();
-                information = "Tiene orejas largas de hasta 7 cm las cuales le ayudan a regular la temperatura del cuerpo y una cola muy corta. Sus patas anteriores son más cortas que las posteriores. Mide de 33 a 50 cm en condiciones afables.";
+                information = "Son animales que tienen muy buena relación con los humanos, ya que son muy amistosos y agradables.";
                 break;
             default:
             break;

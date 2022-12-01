@@ -423,28 +423,28 @@ public class VocalesA extends AppCompatActivity {
         {
             case 1:
                 newMarkAnchorNode.setRenderable(vocala);
-                information = "Ana la araña viaja en avión y usa su atuendo de algodón.";
+                information = "A de avión.";
             break;
 
             case 2:
                 newMarkAnchorNode.setRenderable(vocale);
                 audioe.start();
-                information = "Corremos al estadio a ver el elefante que sube la escalera, será emocionante.";
+                information = "E de escalera.";
             break;
             case 3:
                 newMarkAnchorNode.setRenderable(vocali);
                 audioi.start();
-                information = "Tengo una idea dice la italiana, voy a imprimir la foto de la iguana.";
+                information = "I de iglesia.";
                 break;
             case 4:
                 newMarkAnchorNode.setRenderable(vocalo);
                 audioo.start();
-                information = "Que buen ojo tiene ese ogro, caza en el oscuro";
+                information = "O de oso.";
                 break;
             case 5:
                 newMarkAnchorNode.setRenderable(vocalu);
                 audiou.start();
-                information = "Úrsula la urraca mirando el universo, piensa en el unicornio y escribe un verso.";
+                information = "U de uva.";
                 break;
             default:
             break;
