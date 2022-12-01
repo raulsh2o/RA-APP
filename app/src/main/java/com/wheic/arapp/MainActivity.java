@@ -5,6 +5,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -25,6 +26,8 @@ import com.wheic.arapp.actividades.NumerosActivity;
 import com.wheic.arapp.actividades.VocalesActivity;
 import com.wheic.arapp.actividades.SalvajesActivity;
 import com.wheic.arapp.actividades.fragment.InicioFragment;
+
+import android.media.MediaPlayer;
 
 public class MainActivity extends AppCompatActivity implements IComunicaFragments,InicioFragment.OnFragmentInteractionListener {
 
@@ -70,6 +73,9 @@ public class MainActivity extends AppCompatActivity implements IComunicaFragment
         bvocales = (Button)findViewById(R.id.ivocales);
         bfrutas = (Button)findViewById(R.id.iFrutas);
         bnumeros=(Button)findViewById(R.id.inumeros);
+
+
+
         //*************************************************************************
         //vista = inflater.inflate(R.layout.activity_main,container,false);
         //*************************************************************************

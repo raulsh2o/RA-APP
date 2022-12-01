@@ -13,6 +13,7 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -42,7 +43,7 @@ import android.media.MediaPlayer;
 
 
 public class VocalesA extends AppCompatActivity {
-    MediaPlayer audioa, audioe, audioi, audioo, audiou;
+    MediaPlayer audioa, audioe, audioi, audioo, audiou, audiointro;
     private ArFragment arCam; //object of ArFragment Class
 
     private int clickNo = 0; //helps to render the 3d model only once when we tap the screen
@@ -88,6 +89,10 @@ public class VocalesA extends AppCompatActivity {
         audioi = MediaPlayer.create(this,R.raw.vaudioi);
         audioo = MediaPlayer.create(this,R.raw.vaudioo);
         audiou = MediaPlayer.create(this,R.raw.vaudiou);
+        audiointro = MediaPlayer.create(this,R.raw.vocalsintro);
+
+        //REPRODUCIR AUDIO DE INTRO
+        audiointro.start();
         //*************************************************************************
         ModelRenderable.builder()
                 .setSource(this, R.raw.vocal_a)
@@ -220,7 +225,7 @@ public class VocalesA extends AppCompatActivity {
         Button Vocali = (Button) findViewById(R.id.id_vocali);
         Button Vocalo = (Button) findViewById(R.id.id_vocalo);
         Button Vocalu = (Button) findViewById(R.id.id_vocalu);
-        Button informacion = (Button) findViewById(R.id.id_informacion);
+        ImageButton informacion = (ImageButton) findViewById(R.id.id_informacion);
 /*
         String file11 ="click Gato 1";
         Toast toast11 = Toast.makeText(this, file11, Toast.LENGTH_SHORT);
@@ -245,7 +250,7 @@ public class VocalesA extends AppCompatActivity {
                             }
                         });*/
                 AlertDialog.Builder builder = new AlertDialog.Builder(VocalesA.this);
-                builder.setIcon(R.mipmap.ic_launcher).
+                builder.setIcon(R.drawable.info).
                         setMessage(information).
                         setTitle("Información:");
                 AlertDialog alertDialog=builder.create();

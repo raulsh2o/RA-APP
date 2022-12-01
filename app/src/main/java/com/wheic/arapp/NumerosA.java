@@ -13,6 +13,7 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -96,6 +97,8 @@ public class NumerosA extends AppCompatActivity {
         audio10 = MediaPlayer.create(this,R.raw.nadiez);
         audioi = MediaPlayer.create(this,R.raw.naintro);
 
+        //REPRODUCIR AUDIO DE INTRO
+        audioi.start();
         //*************************************************************************
         ModelRenderable.builder()
                 .setSource(this, R.raw.n0)
@@ -266,7 +269,7 @@ public class NumerosA extends AppCompatActivity {
         Button Nocho = (Button) findViewById(R.id.id_ocho);
         Button Nnueve = (Button) findViewById(R.id.id_nueve);
         Button Ndiez = (Button) findViewById(R.id.id_diez);
-        Button informacion = (Button) findViewById(R.id.id_informacion);
+        ImageButton informacion = (ImageButton) findViewById(R.id.id_informacion);
 /*
         String file11 ="click Gato 1";
         Toast toast11 = Toast.makeText(this, file11, Toast.LENGTH_SHORT);
@@ -291,7 +294,7 @@ public class NumerosA extends AppCompatActivity {
                             }
                         });*/
                 AlertDialog.Builder builder = new AlertDialog.Builder(NumerosA.this);
-                builder.setIcon(R.mipmap.ic_launcher).
+                builder.setIcon(R.drawable.info).
                         setMessage(information).
                         setTitle("Información:");
                 AlertDialog alertDialog=builder.create();

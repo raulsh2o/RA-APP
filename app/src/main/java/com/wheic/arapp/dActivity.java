@@ -13,6 +13,7 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -46,7 +47,7 @@ public class dActivity extends AppCompatActivity {
 
     private int clickNo = 0; //helps to render the 3d model only once when we tap the screen
     //****************************************************************
-    MediaPlayer audioDog, audioCat, audioRabbit, audioChicken, audioHorse,audioBird, audioDuck, audioCow;
+    MediaPlayer audioDog, audioCat, audioRabbit, audioChicken, audioHorse,audioBird, audioDuck, audioCow, audioi;
     //****************************************************************
     private List<AnchorNode> anchorNodeList = new ArrayList<>();
     private AnchorNode currentSelectedAnchorNode = null;
@@ -97,8 +98,11 @@ public class dActivity extends AppCompatActivity {
         audioBird = MediaPlayer.create(this,R.raw.dapajaro);
         audioDuck = MediaPlayer.create(this,R.raw.dapato);
         audioCow = MediaPlayer.create(this,R.raw.davaca);
-        //audioo = MediaPlayer.create(this,R.raw.vaudioo);
-        //audiou = MediaPlayer.create(this,R.raw.vaudiou);
+        audioi = MediaPlayer.create(this,R.raw.naintro);
+
+        //REPRODUCIR AUDIO DE INTRO
+        audioi.start();
+
         //*************************************************************************
         ModelRenderable.builder()
                 .setSource(this, R.raw.gfg_gold_text_stand_24g)
@@ -289,7 +293,7 @@ public class dActivity extends AppCompatActivity {
         Button pato1show=(Button) findViewById(R.id.id_pato1);
         Button caballo1show=(Button) findViewById(R.id.id_caballo1);
         Button conejo1show=(Button) findViewById(R.id.id_conejo1);
-        Button informacion = (Button) findViewById(R.id.id_informacion);
+        ImageButton informacion = (ImageButton) findViewById(R.id.id_informacion);
 /*
         String file11 ="click Gato 1";
         Toast toast11 = Toast.makeText(this, file11, Toast.LENGTH_SHORT);
@@ -314,7 +318,7 @@ public class dActivity extends AppCompatActivity {
                             }
                         });*/
                 AlertDialog.Builder builder = new AlertDialog.Builder(dActivity.this);
-                builder.setIcon(R.mipmap.ic_launcher).
+                builder.setIcon(R.drawable.info).
                         setMessage(information).
                         setTitle("Información:");
                 AlertDialog alertDialog=builder.create();

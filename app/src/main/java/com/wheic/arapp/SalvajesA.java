@@ -17,6 +17,7 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -51,7 +52,7 @@ public class SalvajesA extends AppCompatActivity {
     //****************************************************************
     private List<AnchorNode> anchorNodeList = new ArrayList<>();
     private AnchorNode currentSelectedAnchorNode = null;
-    MediaPlayer audioMonkey, audioLion, audioTiger, audioElephant, audioSerpent,audioJirafa, audioHipopo, audioCocodrile;
+    MediaPlayer audioMonkey, audioLion, audioTiger, audioElephant, audioSerpent,audioJirafa, audioHipopo, audioCocodrile, audioi;
     MediaPlayer audiogMonkey, audiogLion, audiogTiger, audiogElephant, audiogSerpent,audiogJirafa, audiogHipopo, audiogCocodrile;
     // (Money-), (Lion), (Tiger), (Elephant), Serpent, (Jira-), Hipop*-, (Crocodr-)
     private ModelRenderable monkey1, lion1, tiger1, elephant1, giraffe1, hipopo1, crocodrile1;//iguana2;
@@ -111,6 +112,10 @@ public class SalvajesA extends AppCompatActivity {
         audioJirafa = MediaPlayer.create(this,R.raw.sajirafa);
         audioHipopo = MediaPlayer.create(this,R.raw.sahipopotamo);
         audioCocodrile = MediaPlayer.create(this,R.raw.sacocodrilo);
+        audioi = MediaPlayer.create(this,R.raw.naintro);
+
+        //REPRODUCIR AUDIO DE INTRO
+        audioi.start();
 
         //*************************************************************************
         ModelRenderable.builder()
@@ -280,7 +285,7 @@ public class SalvajesA extends AppCompatActivity {
         Button jirafa1show = (Button) findViewById(R.id.id_jirafa1);
         Button hipopotamo1show = (Button) findViewById(R.id.id_hipopotamo1);
         Button cocodrilo1show = (Button) findViewById(R.id.id_cocodrilo1);
-        Button informacion = (Button) findViewById(R.id.id_informacion);
+        ImageButton informacion = (ImageButton) findViewById(R.id.id_informacion);
 /*
         String file11 ="Serpiente";
         Toast toast11 = Toast.makeText(this, file11, Toast.LENGTH_SHORT);
@@ -304,7 +309,7 @@ public class SalvajesA extends AppCompatActivity {
                             }
                         });*/
                 AlertDialog.Builder builder = new AlertDialog.Builder(SalvajesA.this);
-                builder.setIcon(R.mipmap.ic_launcher).
+                builder.setIcon(R.drawable.info).
                         setMessage(information).
                         setTitle("Información:");
                 AlertDialog alertDialog=builder.create();
@@ -531,22 +536,22 @@ public class SalvajesA extends AppCompatActivity {
             break;
             case 2:
                 newMarkAnchorNode.setRenderable(lion1);
-                audiogLion.start();
+                audioLion.start();
                 information = "El león es el rey de la selva, es salvaje, fuerte, grande y tiene dientes muy grandes.";
                 break;
             case 3:
                 newMarkAnchorNode.setRenderable(tiger1);
-                audiogTiger.start();
+                audioTiger.start();
                 information = "El tigre es un animal grande, corren muy rápido, son solitarios y cazadores.";
                 break;
             case 4:
                 newMarkAnchorNode.setRenderable(elephant1);
-                audiogElephant.start();
+                audioElephant.start();
                 information = "El elefante es el animal terrestre más grande, tiene orejas grandes y su trompa muy larga, tienen ojos pequeños.";
                 break;
             case 5:
                 newMarkAnchorNode.setRenderable(serpiente01);
-                audiogSerpent.start();
+                audioSerpent.start();
                 information = "\n" +
                         "La serpiente es un animal que se arrastra por el suelo, no tiene patas, vota veneno por su boca, su cuerpo es muy largo.";
                 break;

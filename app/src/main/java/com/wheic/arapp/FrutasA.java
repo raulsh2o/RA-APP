@@ -13,6 +13,7 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -41,7 +42,7 @@ import android.media.MediaPlayer;
 
 
 public class FrutasA extends AppCompatActivity {
-    MediaPlayer audiomanzana, audiopera, audiobanana, audiouva, audiosandia, audiomelon, audiopina;
+    MediaPlayer audiomanzana, audiopera, audiobanana, audiouva, audiosandia, audiomelon, audiopina, audioi;
     private ArFragment arCam; //object of ArFragment Class
 
     private int clickNo = 0; //helps to render the 3d model only once when we tap the screen
@@ -91,9 +92,11 @@ public class FrutasA extends AppCompatActivity {
         audiosandia = MediaPlayer.create(this,R.raw.fasandia);
         audiomelon = MediaPlayer.create(this,R.raw.famelon);
         audiopina = MediaPlayer.create(this,R.raw.fapina);
-        /*audioi = MediaPlayer.create(this,R.raw.vaudioi);
-        audioo = MediaPlayer.create(this,R.raw.vaudioo);
-        audiou = MediaPlayer.create(this,R.raw.vaudiou);*/
+        audioi = MediaPlayer.create(this,R.raw.naintro);
+
+        //REPRODUCIR AUDIO DE INTRO
+        audioi.start();
+
         //*************************************************************************
         ModelRenderable.builder()
                 .setSource(this, R.raw.fpera)
@@ -284,7 +287,7 @@ public class FrutasA extends AppCompatActivity {
         Button Sandia = (Button) findViewById(R.id.id_Sandia);
         Button Melon = (Button) findViewById(R.id.id_Melon);
         Button Pina = (Button) findViewById(R.id.id_Piña);
-        Button informacion = (Button) findViewById(R.id.id_informacion);
+        ImageButton informacion = (ImageButton) findViewById(R.id.id_informacion);
         /*Button Vocali = (Button) findViewById(R.id.id_vocali);
         Button Vocalo = (Button) findViewById(R.id.id_vocalo);
         Button Vocalu = (Button) findViewById(R.id.id_vocalu);*/
@@ -311,7 +314,7 @@ public class FrutasA extends AppCompatActivity {
                             }
                         });*/
                 AlertDialog.Builder builder = new AlertDialog.Builder(FrutasA.this);
-                builder.setIcon(R.mipmap.ic_launcher).
+                builder.setIcon(R.drawable.info).
                         setMessage(information).
                         setTitle("Información:");
                 AlertDialog alertDialog=builder.create();
