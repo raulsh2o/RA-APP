@@ -47,7 +47,7 @@ public class dActivity extends AppCompatActivity {
 
     private int clickNo = 0; //helps to render the 3d model only once when we tap the screen
     //****************************************************************
-    MediaPlayer audioDog, audioCat, audioRabbit, audioChicken, audioHorse,audioBird, audioDuck, audioCow, audioi;
+    MediaPlayer audioDog, audioCat, audioRabbit, audioChicken, audioHorse,audioBird, audioDuck, audioCow, audioi, audiogDog, audiogCat, audiogRabbit, audiogChicken, audiogHorse,audiogBird, audiogDuck, audiogCow;
     //****************************************************************
     private List<AnchorNode> anchorNodeList = new ArrayList<>();
     private AnchorNode currentSelectedAnchorNode = null;
@@ -100,7 +100,15 @@ public class dActivity extends AppCompatActivity {
         audioDuck = MediaPlayer.create(this,R.raw.dapato);
         audioCow = MediaPlayer.create(this,R.raw.davaca);
         audioi = MediaPlayer.create(this,R.raw.naintro);
-
+        //RUGIDOS
+        audiogDog = MediaPlayer.create(this,R.raw.sgperro);
+        audiogCat = MediaPlayer.create(this,R.raw.sggato);
+        audiogRabbit = MediaPlayer.create(this,R.raw.sgconejo);
+        audiogChicken = MediaPlayer.create(this,R.raw.sggallina);
+        audiogHorse = MediaPlayer.create(this,R.raw.sgcaballo);
+        audiogBird = MediaPlayer.create(this,R.raw.sgpajaro);
+        audiogDuck = MediaPlayer.create(this,R.raw.sgpato);
+        audiogCow = MediaPlayer.create(this,R.raw.sgvaca);
         //REPRODUCIR AUDIO DE INTRO
         audioi.start();
         choose = "audioi";
@@ -543,21 +551,21 @@ public class dActivity extends AppCompatActivity {
 
     private void stopSound(String sound){
         if (sound == "gato"){
-            audioCat.stop();
+            audiogCat.stop();
         }else if (sound == "pajaro"){
-            audioBird.stop();
+            audiogBird.stop();
         }else if (sound == "gallina"){
-            audioChicken.stop();
+            audiogChicken.stop();
         }else if (sound == "vaca"){
-            audioCow.stop();
+            audiogCow.stop();
         }else if (sound == "perro"){
-            audioDog.stop();
+            audiogDog.stop();
         }else if (sound == "pato"){
-            audioDuck.stop();
+            audiogDuck.stop();
         }else if (sound == "caballo"){
-            audioHorse.stop();
+            audiogHorse.stop();
         }else if (sound == "conejo"){
-            audioRabbit.stop();
+            audiogRabbit.stop();
         }
     }
 
@@ -582,19 +590,9 @@ public class dActivity extends AppCompatActivity {
                 stopSound(choose);
                 choose = "gato";
                 newMarkAnchorNode.setRenderable(gato1);
-                audioCat.start();
+                audiogCat.start();
                 information = "Mamífero de contextura pequeña, de abundante pelaje y muy suave, son muy cariñoso con los humanos.";
-                //**************************************************
-              /*  // Get the animation name.
-                danceData.getName();
-                // Access animations by index.
-                numAnimations = gato1.getAnimationDataCount();
-                danceData = gato1.getAnimationData(0);
-                AnimationData danceData = gato1.getAnimationData("andy_dance");
-                ModelAnimator andyAnimator = new ModelAnimator(danceData, andyRenderable);
-                gato1.start();
-                gato1.setRepeatCount(<number of repeats>);*/
-                //*******************************************************
+
             break;
 
             case 2:
@@ -602,49 +600,49 @@ public class dActivity extends AppCompatActivity {
                 stopSound(choose);
                 choose = "pajaro";
                 newMarkAnchorNode.setRenderable(bird1);
-                audioBird.start();
+                audiogBird.start();
                 information = "Las aves son seres extraordinarios y fascinantes: muchas de ellas poseen un plumaje colorido, producen sonidos extraordinarios o pueden volar.";
             break;
             case 3:
                 stopSound(choose);
                 choose = "gallina";
                 newMarkAnchorNode.setRenderable(chicken1);
-                audioChicken.start();
+                audiogChicken.start();
                 information = "La gallina es denominado un ave conocida por su cacareo, pone huevos, y está cubierta de plumas de diversos colores";
                 break;
             case 4:
                 stopSound(choose);
                 choose = "vaca";
                 newMarkAnchorNode.setRenderable(cow1);
-                audioCow.start();
+                audiogCow.start();
                 information = "La vaca es un animal mamífero, se alimenta del pasto, hierbas, tallos, hojas, semillas y raíces.";
                 break;
             case 5:
                 stopSound(choose);
                 choose = "perro";
                 newMarkAnchorNode.setRenderable(dog1);
-                audioDog.start();
+                audiogDog.start();
                 information = "El perro doméstico es un mamífero carnívoro, Su tamaño, forma y pelaje varían en función de la raza de perro, ven bien, usan mayormente su oído y su olfato, sentidos que tienen muy desarrollados y que son muy prácticos para el humano.";
                 break;
             case 6:
                 stopSound(choose);
                 choose = "pato";
                 newMarkAnchorNode.setRenderable(duck1);
-                audioDuck.start();
+                audiogDuck.start();
                 information = "El pato es un ave, vive cerca del agua y nadan.";
                 break;
             case 7:
                 stopSound(choose);
                 choose = "caballo";
                 newMarkAnchorNode.setRenderable(horse1);
-                audioHorse.start();
+                audiogHorse.start();
                 information = "Un Caballo es un animal cuadrúpedo perteneciente a la especie de los mamíferos, se caracteriza por su gran tamaño, son animales que galopan y relinchan";
                 break;
             case 8:
                 stopSound(choose);
                 choose = "conejo";
                 newMarkAnchorNode.setRenderable(rabbit1);
-                audioRabbit.start();
+                audiogRabbit.start();
                 information = "Son animales que tienen muy buena relación con los humanos, ya que son muy amistosos y agradables.";
                 break;
             default:
