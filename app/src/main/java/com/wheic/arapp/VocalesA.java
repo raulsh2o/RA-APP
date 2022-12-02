@@ -54,6 +54,7 @@ public class VocalesA extends AppCompatActivity {
     private ModelRenderable vocala, vocale, vocali, vocalo, vocalu;
     private int Status1 = 0;
     private String information = "";
+    private String choose = "";
     //****************************************************************
     public static boolean checkSystemSupport(Activity activity) {
 
@@ -93,6 +94,7 @@ public class VocalesA extends AppCompatActivity {
 
         //REPRODUCIR AUDIO DE INTRO
         audiointro.start();
+        choose = "audiointro";
         //*************************************************************************
         ModelRenderable.builder()
                 .setSource(this, R.raw.vocal_a)
@@ -410,6 +412,24 @@ public class VocalesA extends AppCompatActivity {
         }
     }
 
+
+    private void stopSound(String sound){
+        if (sound == "a"){
+            audioa.stop();
+        }else if (sound == "e"){
+            audioe.stop();
+        }else if (sound == "i"){
+            audioi.stop();
+        }else if (sound == "o"){
+            audioo.stop();
+        }else if (sound == "u"){
+            audiou.stop();
+        }
+    }
+
+
+
+
     private AnchorNode moveRenderable(AnchorNode markAnchorNodeToMove, Pose newPoseToMoveTo) {
         //Move a renderable to a new pose
         if (markAnchorNodeToMove != null) {
@@ -427,26 +447,37 @@ public class VocalesA extends AppCompatActivity {
         switch(Status1)
         {
             case 1:
+                stopSound(choose);
+                choose = "a";
                 newMarkAnchorNode.setRenderable(vocala);
                 information = "A de avión.";
+                audioa.start();
             break;
 
             case 2:
+                stopSound(choose);
+                choose = "e";
                 newMarkAnchorNode.setRenderable(vocale);
                 audioe.start();
                 information = "E de escalera.";
             break;
             case 3:
+                stopSound(choose);
+                choose = "i";
                 newMarkAnchorNode.setRenderable(vocali);
                 audioi.start();
                 information = "I de iglesia.";
                 break;
             case 4:
+                stopSound(choose);
+                choose = "o";
                 newMarkAnchorNode.setRenderable(vocalo);
                 audioo.start();
                 information = "O de oso.";
                 break;
             case 5:
+                stopSound(choose);
+                choose = "u";
                 newMarkAnchorNode.setRenderable(vocalu);
                 audiou.start();
                 information = "U de uva.";

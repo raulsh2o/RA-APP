@@ -53,6 +53,8 @@ public class FrutasA extends AppCompatActivity {
     private ModelRenderable pera, manzana, banana,uva,sandia,melon,pina;
     private int Status1 = 0;
     private String information = "";
+    private String choose = "";
+
 
     //****************************************************************
     public static boolean checkSystemSupport(Activity activity) {
@@ -96,7 +98,7 @@ public class FrutasA extends AppCompatActivity {
 
         //REPRODUCIR AUDIO DE INTRO
         audioi.start();
-
+        choose = "audioi";
         //*************************************************************************
         ModelRenderable.builder()
                 .setSource(this, R.raw.fpera)
@@ -561,6 +563,25 @@ public class FrutasA extends AppCompatActivity {
         }
     }
 
+    private void stopSound(String sound){
+        if (sound == "pera"){
+            audiopera.stop();
+        }else if (sound == "manzana"){
+            audiomanzana.stop();
+        }else if (sound == "banana"){
+            audiobanana.stop();
+        }else if (sound == "uva"){
+            audiouva.stop();
+        }else if (sound == "sandia"){
+            audiosandia.stop();
+        }else if (sound == "melon"){
+            audiomelon.stop();
+        }else if (sound == "pina"){
+            audiopina.stop();
+        }
+    }
+
+
     private AnchorNode moveRenderable(AnchorNode markAnchorNodeToMove, Pose newPoseToMoveTo) {
         //Move a renderable to a new pose
         if (markAnchorNodeToMove != null) {
@@ -578,37 +599,51 @@ public class FrutasA extends AppCompatActivity {
         switch(Status1)
         {
             case 1:
+                stopSound(choose);
+                choose = "pera";
                 newMarkAnchorNode.setRenderable(pera);
                 audiopera.start();
                 information = "La pera tiene forma como una guitarra, es rica y da mucha energía.";
             break;
 
             case 2:
+                stopSound(choose);
+                choose = "manzana";
                 newMarkAnchorNode.setRenderable(manzana);
                 audiomanzana.start();
                 information = "La manzana es roja, amarilla, verde, es dulces , una fruta muy rica para hacernos fuerte ( puedes ayudar con imágenes, sería ideal)";
             break;
             case 3:
+                stopSound(choose);
+                choose = "banana";
                 newMarkAnchorNode.setRenderable(banana);
                 audiobanana.start();
                 information = "La banana es de color amarillo por fuera pero blanco por dentro, es muy dulce y muy rico en vitaminas.";
                 break;
             case 4:
+                stopSound(choose);
+                choose = "uva";
                 newMarkAnchorNode.setRenderable(uva);
                 audiouva.start();
                 information = "La uva tiene forma de pequeños círculos, hay una semillita en el centro, tiene colores verde y morado, es dulce y muy rica.";
                 break;
             case 5:
+                stopSound(choose);
+                choose = "sandia";
                 newMarkAnchorNode.setRenderable(sandia);
                 audiosandia.start();
                 information = "La sandía es una fruta verde por fuera y roja por dentro, tiene semillitas las cuales no hay que comer, es muy jugosa, rica y dulce.";
                 break;
             case 6:
+                stopSound(choose);
+                choose = "melon";
                 newMarkAnchorNode.setRenderable(melon);
                 audiomelon.start();
                 information = "El melón es una fruta muy dulce, pero para probarla, hay que pelar, hay de varios colores, tiene semillita, pero no se pueden comer.";
                 break;
             case 7:
+                stopSound(choose);
+                choose = "pina";
                 newMarkAnchorNode.setRenderable(pina);
                 audiopina.start();
                 information = "La piña es una fruta que tiene una forma muy particular, es grande y por dentro es muy dulces y huele muy rico, sirve también para jugos.";

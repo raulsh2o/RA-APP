@@ -60,6 +60,7 @@ public class SalvajesA extends AppCompatActivity {
     private ModelRenderable jirafa01;
     private int Status1 = 0;
     private String information = "";
+    private String choose = "";
     //****************************************************************
     public static boolean checkSystemSupport(Activity activity) {
 
@@ -116,7 +117,7 @@ public class SalvajesA extends AppCompatActivity {
 
         //REPRODUCIR AUDIO DE INTRO
         audioi.start();
-
+        choose = "audioi";
         //*************************************************************************
         ModelRenderable.builder()
                 .setSource(this, R.raw.serpiente1)
@@ -513,6 +514,28 @@ public class SalvajesA extends AppCompatActivity {
         }
     }
 
+
+    private void stopSound(String sound){
+        if (sound == "mono"){
+            audioMonkey.stop();
+        }else if (sound == "leon"){
+            audioLion.stop();
+        }else if (sound == "tigre"){
+            audioTiger.stop();
+        }else if (sound == "elefante"){
+            audioElephant.stop();
+        }else if (sound == "serpiente"){
+            audioSerpent.stop();
+        }else if (sound == "jirafa"){
+            audioJirafa.stop();
+        }else if (sound == "hipopotamo"){
+            audioHipopo.stop();
+        }else if (sound == "cocodrilo"){
+            audioCocodrile.stop();
+        }
+    }
+
+
     private AnchorNode moveRenderable(AnchorNode markAnchorNodeToMove, Pose newPoseToMoveTo) {
         //Move a renderable to a new pose
         if (markAnchorNodeToMove != null) {
@@ -530,43 +553,59 @@ public class SalvajesA extends AppCompatActivity {
         switch(Status1)
         {
             case 1:
+                stopSound(choose);
+                choose = "mono";
                 newMarkAnchorNode.setRenderable(monkey1);
                 audioMonkey.start();
                 information = "El mono es proveniente de la familia de los primates, usas sus extremidades para cazar, comer o hacer otras acciones diferentes.";
             break;
             case 2:
+                stopSound(choose);
+                choose = "leon";
                 newMarkAnchorNode.setRenderable(lion1);
                 audioLion.start();
                 information = "El león es el rey de la selva, es salvaje, fuerte, grande y tiene dientes muy grandes.";
                 break;
             case 3:
+                stopSound(choose);
+                choose = "tigre";
                 newMarkAnchorNode.setRenderable(tiger1);
                 audioTiger.start();
                 information = "El tigre es un animal grande, corren muy rápido, son solitarios y cazadores.";
                 break;
             case 4:
+                stopSound(choose);
+                choose = "elefante";
                 newMarkAnchorNode.setRenderable(elephant1);
                 audioElephant.start();
                 information = "El elefante es el animal terrestre más grande, tiene orejas grandes y su trompa muy larga, tienen ojos pequeños.";
                 break;
             case 5:
+                stopSound(choose);
+                choose = "serpiente";
                 newMarkAnchorNode.setRenderable(serpiente01);
                 audioSerpent.start();
                 information = "\n" +
                         "La serpiente es un animal que se arrastra por el suelo, no tiene patas, vota veneno por su boca, su cuerpo es muy largo.";
                 break;
             case 6:
+                stopSound(choose);
+                choose = "jirafa";
                 newMarkAnchorNode.setRenderable(giraffe1);
                 audioJirafa.start();
                 information = "Las jirafas son animales de cuello largo, son de color amarillo con manchas negras y tiene dos cuernos pequeños.";
                 break;
 
             case 7:
+                stopSound(choose);
+                choose = "hipopotamo";
                 newMarkAnchorNode.setRenderable(hipopo1);
                 audioHipopo.start();
                 information = "El hipopótamo es un animal de boca enorme con grandes dientes, son grandes y pesados, son muy agresivos y de patas cortas.";
                 break;
             case 8:
+                stopSound(choose);
+                choose = "cocodrilo";
                 newMarkAnchorNode.setRenderable(crocodrile1);
                 audioCocodrile.start();
                 information = "El cocodrilo   es un animal con 4 patas, se arrastra por el suelo, con una boca enorme y dientes muy grandes, tiene una cola muy larga, y viven en los pantanos, lagos o ríos.";

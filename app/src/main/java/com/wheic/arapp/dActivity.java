@@ -57,6 +57,7 @@ public class dActivity extends AppCompatActivity {
     private ModelRenderable iguana2;
     private int Status1 = 0;
     private String information = "";
+    private String choose = "";
     //****************************************************************
     public static boolean checkSystemSupport(Activity activity) {
 
@@ -102,6 +103,7 @@ public class dActivity extends AppCompatActivity {
 
         //REPRODUCIR AUDIO DE INTRO
         audioi.start();
+        choose = "audioi";
 
         //*************************************************************************
         ModelRenderable.builder()
@@ -539,6 +541,26 @@ public class dActivity extends AppCompatActivity {
         }
     }
 
+    private void stopSound(String sound){
+        if (sound == "gato"){
+            audioCat.stop();
+        }else if (sound == "pajaro"){
+            audioBird.stop();
+        }else if (sound == "gallina"){
+            audioChicken.stop();
+        }else if (sound == "vaca"){
+            audioCow.stop();
+        }else if (sound == "perro"){
+            audioDog.stop();
+        }else if (sound == "pato"){
+            audioDuck.stop();
+        }else if (sound == "caballo"){
+            audioHorse.stop();
+        }else if (sound == "conejo"){
+            audioRabbit.stop();
+        }
+    }
+
     private AnchorNode moveRenderable(AnchorNode markAnchorNodeToMove, Pose newPoseToMoveTo) {
         //Move a renderable to a new pose
         if (markAnchorNodeToMove != null) {
@@ -556,6 +578,9 @@ public class dActivity extends AppCompatActivity {
         switch(Status1)
         {
             case 1:
+
+                stopSound(choose);
+                choose = "gato";
                 newMarkAnchorNode.setRenderable(gato1);
                 audioCat.start();
                 information = "Mamífero de contextura pequeña, de abundante pelaje y muy suave, son muy cariñoso con los humanos.";
@@ -574,36 +599,50 @@ public class dActivity extends AppCompatActivity {
 
             case 2:
                 //newMarkAnchorNode.setRenderable(iguana2);
+                stopSound(choose);
+                choose = "pajaro";
                 newMarkAnchorNode.setRenderable(bird1);
                 audioBird.start();
                 information = "Las aves son seres extraordinarios y fascinantes: muchas de ellas poseen un plumaje colorido, producen sonidos extraordinarios o pueden volar.";
             break;
             case 3:
+                stopSound(choose);
+                choose = "gallina";
                 newMarkAnchorNode.setRenderable(chicken1);
                 audioChicken.start();
                 information = "La gallina es denominado un ave conocida por su cacareo, pone huevos, y está cubierta de plumas de diversos colores";
                 break;
             case 4:
+                stopSound(choose);
+                choose = "vaca";
                 newMarkAnchorNode.setRenderable(cow1);
                 audioCow.start();
                 information = "La vaca es un animal mamífero, se alimenta del pasto, hierbas, tallos, hojas, semillas y raíces.";
                 break;
             case 5:
+                stopSound(choose);
+                choose = "perro";
                 newMarkAnchorNode.setRenderable(dog1);
                 audioDog.start();
                 information = "El perro doméstico es un mamífero carnívoro, Su tamaño, forma y pelaje varían en función de la raza de perro, ven bien, usan mayormente su oído y su olfato, sentidos que tienen muy desarrollados y que son muy prácticos para el humano.";
                 break;
             case 6:
+                stopSound(choose);
+                choose = "pato";
                 newMarkAnchorNode.setRenderable(duck1);
                 audioDuck.start();
                 information = "El pato es un ave, vive cerca del agua y nadan.";
                 break;
             case 7:
+                stopSound(choose);
+                choose = "caballo";
                 newMarkAnchorNode.setRenderable(horse1);
                 audioHorse.start();
                 information = "Un Caballo es un animal cuadrúpedo perteneciente a la especie de los mamíferos, se caracteriza por su gran tamaño, son animales que galopan y relinchan";
                 break;
             case 8:
+                stopSound(choose);
+                choose = "conejo";
                 newMarkAnchorNode.setRenderable(rabbit1);
                 audioRabbit.start();
                 information = "Son animales que tienen muy buena relación con los humanos, ya que son muy amistosos y agradables.";

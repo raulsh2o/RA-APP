@@ -54,6 +54,7 @@ public class NumerosA extends AppCompatActivity {
     private ModelRenderable cero,uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez;
     private int Status1 = 0;
     private String information = "";
+    private String choose = "";
     //****************************************************************
     public static boolean checkSystemSupport(Activity activity) {
 
@@ -99,6 +100,7 @@ public class NumerosA extends AppCompatActivity {
 
         //REPRODUCIR AUDIO DE INTRO
         audioi.start();
+        choose = "audioi";
         //*************************************************************************
         ModelRenderable.builder()
                 .setSource(this, R.raw.n0)
@@ -557,6 +559,34 @@ public class NumerosA extends AppCompatActivity {
         }
     }
 
+
+    private void stopSound(String sound){
+        if (sound == "cero"){
+            audio0.stop();
+        }else if (sound == "uno"){
+            audio1.stop();
+        }else if (sound == "dos"){
+            audio2.stop();
+        }else if (sound == "tres"){
+            audio3.stop();
+        }else if (sound == "cuatro"){
+            audio4.stop();
+        }else if (sound == "cinco"){
+            audio5.stop();
+        }else if (sound == "seis"){
+            audio6.stop();
+        }else if (sound == "siete"){
+            audio7.stop();
+        }else if (sound == "ocho"){
+            audio8.stop();
+        }else if (sound == "nueve"){
+            audio9.stop();
+        }else if (sound == "diez"){
+            audio10.stop();
+        }
+    }
+
+
     private AnchorNode moveRenderable(AnchorNode markAnchorNodeToMove, Pose newPoseToMoveTo) {
         //Move a renderable to a new pose
         if (markAnchorNodeToMove != null) {
@@ -574,59 +604,81 @@ public class NumerosA extends AppCompatActivity {
         switch(Status1)
         {
             case 1:
+                stopSound(choose);
+                choose = "cero";
                 newMarkAnchorNode.setRenderable(cero);
                 audio0.start();
                 information = "El número cero es la rueda moscovita para pasarlo bien.";
             break;
 
             case 2:
+                stopSound(choose);
+                choose = "uno";
                 newMarkAnchorNode.setRenderable(uno);
                 audio1.start();
                 information = "El número uno es un soldado haciendo la instrucción.";
             break;
             case 3:
+                stopSound(choose);
+                choose = "dos";
                 newMarkAnchorNode.setRenderable(dos);
                 audio2.start();
                 information = "El número dos es un patito que está tomando el sol.";
                 break;
             case 4:
+                stopSound(choose);
+                choose = "tres";
                 newMarkAnchorNode.setRenderable(tres);
                 audio3.start();
                 information = "El número tres es una serpiente que baila sin parar.";
                 break;
             case 5:
+                stopSound(choose);
+                choose = "cuatro";
                 newMarkAnchorNode.setRenderable(cuatro);
                 audio4.start();
                 information = "El número cuatro es una sillita que invita a descansar.";
                 break;
             case 6:
+                stopSound(choose);
+                choose = "cinco";
                 newMarkAnchorNode.setRenderable(cinco);
                 audio5.start();
                 information = "El número cinco tiene orejas, parece un conejito.";
                 break;
 
             case 7:
+                stopSound(choose);
+                choose = "seis";
                 newMarkAnchorNode.setRenderable(seis);
                 audio6.start();
                 information = "El número seis es una pera redonda y con rabito.";
                 break;
             case 8:
+                stopSound(choose);
+                choose = "siete";
                 newMarkAnchorNode.setRenderable(siete);
                 audio7.start();
                 information = "El número siete es un sereno con gorra y con bastón.";
                 break;
             case 9:
+                stopSound(choose);
+                choose = "ocho";
                 newMarkAnchorNode.setRenderable(ocho);
                 audio8.start();
                 information = "El número ocho son las gafas que lleva don Ramón.";
                 break;
             case 10:
+                stopSound(choose);
+                choose = "nueve";
                 newMarkAnchorNode.setRenderable(nueve);
                 audio9.start();
                 information = "El número nueve es un globito atado a un cordel.";
                 break;
 
             case 11:
+                stopSound(choose);
+                choose = "diez";
                 newMarkAnchorNode.setRenderable(diez);
                 audio10.start();
                 information = "El número diez es un soldado que lleva un gran melón.";
