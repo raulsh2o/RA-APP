@@ -314,19 +314,39 @@ public class dActivity extends AppCompatActivity {
         informacion.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //Status1 = 1;
-                /*FragmentManager fragmentManager = getSupportFragmentManager();
-                DialogoAlerta dialogo = new DialogoAlerta();
-                dialogo.show(fragmentManager, "tagAlerta");
-                */
-
-              /*  builder.setMessage("Mensaje de Animal")
-                        .setTitle("Información")
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });*/
+                if (choose == "gato"){
+                    stopSound(choose);
+                    audioCat.start();
+                    choose = "ggato";
+                }else if (choose == "pajaro"){
+                    stopSound(choose);
+                    audioBird.start();
+                    choose = "gpajaro";
+                }else if (choose == "gallina"){
+                    stopSound(choose);
+                    audioChicken.start();
+                    choose = "ggallina";
+                }else if (choose == "vaca"){
+                    stopSound(choose);
+                    audioCow.start();
+                    choose = "gvaca";
+                }else if (choose == "perro"){
+                    stopSound(choose);
+                    audioDog.start();
+                    choose = "gperro";
+                }else if (choose == "pato"){
+                    stopSound(choose);
+                    audioDuck.start();
+                    choose = "gpato";
+                }else if (choose == "caballo"){
+                    stopSound(choose);
+                    audioHorse.start();
+                    choose = "gcaballo";
+                }else if (choose == "conejo"){
+                    stopSound(choose);
+                    audioRabbit.start();
+                    choose = "gconejo";
+                }
                 AlertDialog.Builder builder = new AlertDialog.Builder(dActivity.this);
                 builder.setIcon(R.drawable.info).
                         setMessage(information).
@@ -551,21 +571,37 @@ public class dActivity extends AppCompatActivity {
 
     private void stopSound(String sound){
         if (sound == "gato"){
-            audiogCat.stop();
+            audiogCat.pause();
         }else if (sound == "pajaro"){
-            audiogBird.stop();
+            audiogBird.pause();
         }else if (sound == "gallina"){
-            audiogChicken.stop();
+            audiogChicken.pause();
         }else if (sound == "vaca"){
-            audiogCow.stop();
+            audiogCow.pause();
         }else if (sound == "perro"){
-            audiogDog.stop();
+            audiogDog.pause();
         }else if (sound == "pato"){
-            audiogDuck.stop();
+            audiogDuck.pause();
         }else if (sound == "caballo"){
-            audiogHorse.stop();
+            audiogHorse.pause();
         }else if (sound == "conejo"){
-            audiogRabbit.stop();
+            audiogRabbit.pause();
+        }else if (sound == "ggato"){
+            audioCat.pause();
+        }else if (sound == "gpajaro"){
+            audioBird.pause();
+        }else if (sound == "ggallina"){
+            audioChicken.pause();
+        }else if (sound == "gvaca"){
+            audioCow.pause();
+        }else if (sound == "gperro"){
+            audioDog.pause();
+        }else if (sound == "gpato"){
+            audioDuck.pause();
+        }else if (sound == "gcaballo"){
+            audioHorse.pause();
+        }else if (sound == "gconejo"){
+            audioRabbit.pause();
         }
     }
 
