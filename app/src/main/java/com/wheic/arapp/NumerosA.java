@@ -282,19 +282,7 @@ public class NumerosA extends AppCompatActivity {
         informacion.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //Status1 = 1;
-                /*FragmentManager fragmentManager = getSupportFragmentManager();
-                DialogoAlerta dialogo = new DialogoAlerta();
-                dialogo.show(fragmentManager, "tagAlerta");
-                */
 
-              /*  builder.setMessage("Mensaje de Animal")
-                        .setTitle("Información")
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });*/
                 AlertDialog.Builder builder = new AlertDialog.Builder(NumerosA.this);
                 builder.setIcon(R.drawable.info).
                         setMessage(information).
@@ -562,27 +550,27 @@ public class NumerosA extends AppCompatActivity {
 
     private void stopSound(String sound){
         if (sound == "cero"){
-            audio0.stop();
+            audio0.pause();
         }else if (sound == "uno"){
-            audio1.stop();
+            audio1.pause();
         }else if (sound == "dos"){
-            audio2.stop();
+            audio2.pause();
         }else if (sound == "tres"){
-            audio3.stop();
+            audio3.pause();
         }else if (sound == "cuatro"){
-            audio4.stop();
+            audio4.pause();
         }else if (sound == "cinco"){
-            audio5.stop();
+            audio5.pause();
         }else if (sound == "seis"){
-            audio6.stop();
+            audio6.pause();
         }else if (sound == "siete"){
-            audio7.stop();
+            audio7.pause();
         }else if (sound == "ocho"){
-            audio8.stop();
+            audio8.pause();
         }else if (sound == "nueve"){
-            audio9.stop();
+            audio9.pause();
         }else if (sound == "diez"){
-            audio10.stop();
+            audio10.pause();
         }
     }
 

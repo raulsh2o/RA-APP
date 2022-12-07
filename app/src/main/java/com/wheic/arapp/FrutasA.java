@@ -302,19 +302,28 @@ public class FrutasA extends AppCompatActivity {
         informacion.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //Status1 = 1;
-                /*FragmentManager fragmentManager = getSupportFragmentManager();
-                DialogoAlerta dialogo = new DialogoAlerta();
-                dialogo.show(fragmentManager, "tagAlerta");
-                */
-
-              /*  builder.setMessage("Mensaje de Animal")
-                        .setTitle("Información")
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });*/
+                if (choose == "pera"){
+                    //stopSound(choose);
+                    audiopera.start();
+                }else if (choose == "manzana"){
+                    //stopSound(choose);
+                    audiomanzana.start();
+                }else if (choose == "banana"){
+                    //stopSound(choose);
+                    audiobanana.start();
+                }else if (choose == "uva"){
+                    //stopSound(choose);
+                    audiouva.start();
+                }else if (choose == "sandia"){
+                    //stopSound(choose);
+                    audiosandia.start();
+                }else if (choose == "melon"){
+                    //stopSound(choose);
+                    audiomelon.start();
+                }else if (choose == "pina"){
+                    //stopSound(choose);
+                    audiopina.start();
+                }
                 AlertDialog.Builder builder = new AlertDialog.Builder(FrutasA.this);
                 builder.setIcon(R.drawable.info).
                         setMessage(information).
@@ -565,19 +574,19 @@ public class FrutasA extends AppCompatActivity {
 
     private void stopSound(String sound){
         if (sound == "pera"){
-            audiopera.stop();
+            audiopera.pause();
         }else if (sound == "manzana"){
-            audiomanzana.stop();
+            audiomanzana.pause();
         }else if (sound == "banana"){
-            audiobanana.stop();
+            audiobanana.pause();
         }else if (sound == "uva"){
-            audiouva.stop();
+            audiouva.pause();
         }else if (sound == "sandia"){
-            audiosandia.stop();
+            audiosandia.pause();
         }else if (sound == "melon"){
-            audiomelon.stop();
+            audiomelon.pause();
         }else if (sound == "pina"){
-            audiopina.stop();
+            audiopina.pause();
         }
     }
 
@@ -602,7 +611,7 @@ public class FrutasA extends AppCompatActivity {
                 stopSound(choose);
                 choose = "pera";
                 newMarkAnchorNode.setRenderable(pera);
-                audiopera.start();
+                //audiopera.start();
                 information = "La pera tiene forma como una guitarra, es rica y da mucha energía.";
             break;
 
@@ -610,42 +619,42 @@ public class FrutasA extends AppCompatActivity {
                 stopSound(choose);
                 choose = "manzana";
                 newMarkAnchorNode.setRenderable(manzana);
-                audiomanzana.start();
+                //audiomanzana.start();
                 information = "La manzana es roja, amarilla, verde, es dulces , una fruta muy rica para hacernos fuerte ( puedes ayudar con imágenes, sería ideal)";
             break;
             case 3:
                 stopSound(choose);
                 choose = "banana";
                 newMarkAnchorNode.setRenderable(banana);
-                audiobanana.start();
+                //audiobanana.start();
                 information = "La banana es de color amarillo por fuera pero blanco por dentro, es muy dulce y muy rico en vitaminas.";
                 break;
             case 4:
                 stopSound(choose);
                 choose = "uva";
                 newMarkAnchorNode.setRenderable(uva);
-                audiouva.start();
+                //audiouva.start();
                 information = "La uva tiene forma de pequeños círculos, hay una semillita en el centro, tiene colores verde y morado, es dulce y muy rica.";
                 break;
             case 5:
                 stopSound(choose);
                 choose = "sandia";
                 newMarkAnchorNode.setRenderable(sandia);
-                audiosandia.start();
+                //audiosandia.start();
                 information = "La sandía es una fruta verde por fuera y roja por dentro, tiene semillitas las cuales no hay que comer, es muy jugosa, rica y dulce.";
                 break;
             case 6:
                 stopSound(choose);
                 choose = "melon";
                 newMarkAnchorNode.setRenderable(melon);
-                audiomelon.start();
+                //audiomelon.start();
                 information = "El melón es una fruta muy dulce, pero para probarla, hay que pelar, hay de varios colores, tiene semillita, pero no se pueden comer.";
                 break;
             case 7:
                 stopSound(choose);
                 choose = "pina";
                 newMarkAnchorNode.setRenderable(pina);
-                audiopina.start();
+                //audiopina.start();
                 information = "La piña es una fruta que tiene una forma muy particular, es grande y por dentro es muy dulces y huele muy rico, sirve también para jugos.";
                 break;
             default:

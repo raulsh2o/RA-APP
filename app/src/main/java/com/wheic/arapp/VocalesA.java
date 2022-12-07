@@ -238,19 +238,17 @@ public class VocalesA extends AppCompatActivity {
         informacion.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //Status1 = 1;
-                /*FragmentManager fragmentManager = getSupportFragmentManager();
-                DialogoAlerta dialogo = new DialogoAlerta();
-                dialogo.show(fragmentManager, "tagAlerta");
-                */
-
-              /*  builder.setMessage("Mensaje de Animal")
-                        .setTitle("Información")
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });*/
+                if (choose == "a"){
+                    audioa.start();
+                }else if (choose == "e"){
+                    audioe.start();
+                }else if (choose == "i"){
+                    audioi.start();
+                }else if (choose == "o"){
+                    audioo.start();
+                }else if (choose == "u"){
+                    audiou.start();
+                }
                 AlertDialog.Builder builder = new AlertDialog.Builder(VocalesA.this);
                 builder.setIcon(R.drawable.info).
                         setMessage(information).
@@ -415,15 +413,15 @@ public class VocalesA extends AppCompatActivity {
 
     private void stopSound(String sound){
         if (sound == "a"){
-            audioa.stop();
+            audioa.pause();
         }else if (sound == "e"){
-            audioe.stop();
+            audioe.pause();
         }else if (sound == "i"){
-            audioi.stop();
+            audioi.pause();
         }else if (sound == "o"){
-            audioo.stop();
+            audioo.pause();
         }else if (sound == "u"){
-            audiou.stop();
+            audiou.pause();
         }
     }
 
@@ -451,35 +449,35 @@ public class VocalesA extends AppCompatActivity {
                 choose = "a";
                 newMarkAnchorNode.setRenderable(vocala);
                 information = "A de avión.";
-                audioa.start();
+                //audioa.start();
             break;
 
             case 2:
                 stopSound(choose);
                 choose = "e";
                 newMarkAnchorNode.setRenderable(vocale);
-                audioe.start();
+                //audioe.start();
                 information = "E de escalera.";
             break;
             case 3:
                 stopSound(choose);
                 choose = "i";
                 newMarkAnchorNode.setRenderable(vocali);
-                audioi.start();
+                //audioi.start();
                 information = "I de iglesia.";
                 break;
             case 4:
                 stopSound(choose);
                 choose = "o";
                 newMarkAnchorNode.setRenderable(vocalo);
-                audioo.start();
+                //audioo.start();
                 information = "O de oso.";
                 break;
             case 5:
                 stopSound(choose);
                 choose = "u";
                 newMarkAnchorNode.setRenderable(vocalu);
-                audiou.start();
+                //audiou.start();
                 information = "U de uva.";
                 break;
             default:

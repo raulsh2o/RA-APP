@@ -52,8 +52,8 @@ public class SalvajesA extends AppCompatActivity {
     //****************************************************************
     private List<AnchorNode> anchorNodeList = new ArrayList<>();
     private AnchorNode currentSelectedAnchorNode = null;
-    MediaPlayer audioMonkey, audioLion, audioTiger, audioElephant, audioSerpent,audioJirafa, audioHipopo, audioCocodrile, audioi;
-    MediaPlayer audiogMonkey, audiogLion, audiogTiger, audiogElephant, audiogSerpent,audiogJirafa, audiogHipopo, audiogCocodrile;
+    MediaPlayer audioMonkey, audioLion, audioTiger, audioElephant, audioSerpent,audioJirafa, audioHipopo, audioCocodrile, audioi, audiogMonkey, audiogLion, audiogTiger, audiogElephant, audiogSerpent,audiogJirafa, audiogHipopo, audiogCocodrile;;
+    //MediaPlayer audiogMonkey, audiogLion, audiogTiger, audiogElephant, audiogSerpent,audiogJirafa, audiogHipopo, audiogCocodrile;
     // (Money-), (Lion), (Tiger), (Elephant), Serpent, (Jira-), Hipop*-, (Crocodr-)
     private ModelRenderable monkey1, lion1, tiger1, elephant1, giraffe1, hipopo1, crocodrile1;//iguana2;
     private ModelRenderable serpiente01;
@@ -106,13 +106,14 @@ public class SalvajesA extends AppCompatActivity {
         //audiou = MediaPlayer.create(this,R.raw.vaudiou);
 
         //audiogMonkey = MediaPlayer.create(this,R.raw.samono);
-        audiogLion = MediaPlayer.create(this,R.raw.sgalion);
-        audiogTiger = MediaPlayer.create(this,R.raw.sgatiger);
-        audiogElephant = MediaPlayer.create(this,R.raw.sgaelephant);
-        audiogSerpent = MediaPlayer.create(this,R.raw.sgasnake);
-        audioJirafa = MediaPlayer.create(this,R.raw.sajirafa);
-        audioHipopo = MediaPlayer.create(this,R.raw.sahipopotamo);
-        audioCocodrile = MediaPlayer.create(this,R.raw.sacocodrilo);
+        audiogMonkey = MediaPlayer.create(this,R.raw.sgmono);
+        audiogLion = MediaPlayer.create(this,R.raw.sgleon);
+        audiogTiger = MediaPlayer.create(this,R.raw.sgtigre);
+        audiogElephant = MediaPlayer.create(this,R.raw.sgelefante);
+        audiogSerpent = MediaPlayer.create(this,R.raw.sgserpiente);
+        audiogJirafa = MediaPlayer.create(this,R.raw.sgjirafa);
+        audiogHipopo = MediaPlayer.create(this,R.raw.sghipopotamo);
+        audiogCocodrile = MediaPlayer.create(this,R.raw.sgcocodrilo);
         audioi = MediaPlayer.create(this,R.raw.naintro);
 
         //REPRODUCIR AUDIO DE INTRO
@@ -296,19 +297,39 @@ public class SalvajesA extends AppCompatActivity {
         informacion.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //Status1 = 1;
-                /*FragmentManager fragmentManager = getSupportFragmentManager();
-                DialogoAlerta dialogo = new DialogoAlerta();
-                dialogo.show(fragmentManager, "tagAlerta");
-                */
-
-              /*  builder.setMessage("Mensaje de Animal")
-                        .setTitle("Información")
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });*/
+                if (choose == "mono"){
+                    stopSound(choose);
+                    audioMonkey.start();
+                    choose = "gmono";
+                }else if (choose == "leon"){
+                    stopSound(choose);
+                    audioLion.start();
+                    choose = "gleon";
+                }else if (choose == "tigre"){
+                    stopSound(choose);
+                    audioTiger.start();
+                    choose = "gtigre";
+                }else if (choose == "elefante"){
+                    stopSound(choose);
+                    audioElephant.start();
+                    choose = "gelefante";
+                }else if (choose == "serpiente"){
+                    stopSound(choose);
+                    audioSerpent.start();
+                    choose = "gserpiente";
+                }else if (choose == "jirafa"){
+                    stopSound(choose);
+                    audioJirafa.start();
+                    choose = "gjirafa";
+                }else if (choose == "hipopotamo"){
+                    stopSound(choose);
+                    audioHipopo.start();
+                    choose = "ghipopotamo";
+                }else if (choose == "cocodrilo"){
+                    stopSound(choose);
+                    audioCocodrile.start();
+                    choose = "gcocodrilo";
+                }
                 AlertDialog.Builder builder = new AlertDialog.Builder(SalvajesA.this);
                 builder.setIcon(R.drawable.info).
                         setMessage(information).
@@ -517,21 +538,37 @@ public class SalvajesA extends AppCompatActivity {
 
     private void stopSound(String sound){
         if (sound == "mono"){
-            audioMonkey.stop();
+            audiogMonkey.pause();
         }else if (sound == "leon"){
-            audioLion.stop();
+            audiogLion.pause();
         }else if (sound == "tigre"){
-            audioTiger.stop();
+            audiogTiger.pause();
         }else if (sound == "elefante"){
-            audioElephant.stop();
+            audiogElephant.pause();
         }else if (sound == "serpiente"){
-            audioSerpent.stop();
+            audiogSerpent.pause();
         }else if (sound == "jirafa"){
-            audioJirafa.stop();
+            audiogJirafa.pause();
         }else if (sound == "hipopotamo"){
-            audioHipopo.stop();
+            audiogHipopo.pause();
         }else if (sound == "cocodrilo"){
-            audioCocodrile.stop();
+            audiogCocodrile.pause();
+        }else if (sound == "gmono"){
+            audioMonkey.pause();
+        }else if (sound == "gleon"){
+            audioLion.pause();
+        }else if (sound == "gtigre"){
+            audioTiger.pause();
+        }else if (sound == "gelefante"){
+            audioElephant.pause();
+        }else if (sound == "gserpiente"){
+            audioSerpent.pause();
+        }else if (sound == "gjirafa"){
+            audioJirafa.pause();
+        }else if (sound == "ghipopotamo"){
+            audioHipopo.pause();
+        }else if (sound == "gcocodrilo"){
+            audioCocodrile.pause();
         }
     }
 
@@ -556,35 +593,35 @@ public class SalvajesA extends AppCompatActivity {
                 stopSound(choose);
                 choose = "mono";
                 newMarkAnchorNode.setRenderable(monkey1);
-                audioMonkey.start();
+                audiogMonkey.start();
                 information = "El mono es proveniente de la familia de los primates, usas sus extremidades para cazar, comer o hacer otras acciones diferentes.";
             break;
             case 2:
                 stopSound(choose);
                 choose = "leon";
                 newMarkAnchorNode.setRenderable(lion1);
-                audioLion.start();
+                audiogLion.start();
                 information = "El león es el rey de la selva, es salvaje, fuerte, grande y tiene dientes muy grandes.";
                 break;
             case 3:
                 stopSound(choose);
                 choose = "tigre";
                 newMarkAnchorNode.setRenderable(tiger1);
-                audioTiger.start();
+                audiogTiger.start();
                 information = "El tigre es un animal grande, corren muy rápido, son solitarios y cazadores.";
                 break;
             case 4:
                 stopSound(choose);
                 choose = "elefante";
                 newMarkAnchorNode.setRenderable(elephant1);
-                audioElephant.start();
+                audiogElephant.start();
                 information = "El elefante es el animal terrestre más grande, tiene orejas grandes y su trompa muy larga, tienen ojos pequeños.";
                 break;
             case 5:
                 stopSound(choose);
                 choose = "serpiente";
                 newMarkAnchorNode.setRenderable(serpiente01);
-                audioSerpent.start();
+                audiogSerpent.start();
                 information = "\n" +
                         "La serpiente es un animal que se arrastra por el suelo, no tiene patas, vota veneno por su boca, su cuerpo es muy largo.";
                 break;
@@ -592,7 +629,7 @@ public class SalvajesA extends AppCompatActivity {
                 stopSound(choose);
                 choose = "jirafa";
                 newMarkAnchorNode.setRenderable(giraffe1);
-                audioJirafa.start();
+                audiogJirafa.start();
                 information = "Las jirafas son animales de cuello largo, son de color amarillo con manchas negras y tiene dos cuernos pequeños.";
                 break;
 
@@ -600,14 +637,14 @@ public class SalvajesA extends AppCompatActivity {
                 stopSound(choose);
                 choose = "hipopotamo";
                 newMarkAnchorNode.setRenderable(hipopo1);
-                audioHipopo.start();
+                audiogHipopo.start();
                 information = "El hipopótamo es un animal de boca enorme con grandes dientes, son grandes y pesados, son muy agresivos y de patas cortas.";
                 break;
             case 8:
                 stopSound(choose);
                 choose = "cocodrilo";
                 newMarkAnchorNode.setRenderable(crocodrile1);
-                audioCocodrile.start();
+                audiogCocodrile.start();
                 information = "El cocodrilo   es un animal con 4 patas, se arrastra por el suelo, con una boca enorme y dientes muy grandes, tiene una cola muy larga, y viven en los pantanos, lagos o ríos.";
                 break;
             /*case 20:
