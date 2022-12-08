@@ -620,7 +620,7 @@ public class FrutasA extends AppCompatActivity {
                 choose = "manzana";
                 newMarkAnchorNode.setRenderable(manzana);
                 //audiomanzana.start();
-                information = "La manzana es roja, amarilla, verde, es dulces , una fruta muy rica para hacernos fuerte ( puedes ayudar con imágenes, sería ideal)";
+                information = "La manzana es roja, amarilla, verde, es dulces , una fruta muy rica para hacernos fuertes.";
             break;
             case 3:
                 stopSound(choose);
