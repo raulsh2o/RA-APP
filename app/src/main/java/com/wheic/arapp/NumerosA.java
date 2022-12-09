@@ -588,13 +588,14 @@ public class NumerosA extends AppCompatActivity {
         Session session = arCam.getArSceneView().getSession();
         Anchor markAnchor = session.createAnchor(newPoseToMoveTo.extractTranslation());
         AnchorNode newMarkAnchorNode = new AnchorNode(markAnchor);
-
+        TransformableNode andy = new TransformableNode(arCam.getTransformationSystem());
+        andy.setParent(newMarkAnchorNode);
         switch(Status1)
         {
             case 1:
                 stopSound(choose);
                 choose = "cero";
-                newMarkAnchorNode.setRenderable(cero);
+                andy.setRenderable(cero);
                 audio0.start();
                 information = "El número cero es la rueda moscovita para pasarlo bien.";
             break;
@@ -602,35 +603,35 @@ public class NumerosA extends AppCompatActivity {
             case 2:
                 stopSound(choose);
                 choose = "uno";
-                newMarkAnchorNode.setRenderable(uno);
+                andy.setRenderable(uno);
                 audio1.start();
                 information = "El número uno es un soldado haciendo la instrucción.";
             break;
             case 3:
                 stopSound(choose);
                 choose = "dos";
-                newMarkAnchorNode.setRenderable(dos);
+                andy.setRenderable(dos);
                 audio2.start();
                 information = "El número dos es un patito que está tomando el sol.";
                 break;
             case 4:
                 stopSound(choose);
                 choose = "tres";
-                newMarkAnchorNode.setRenderable(tres);
+                andy.setRenderable(tres);
                 audio3.start();
                 information = "El número tres es una serpiente que baila sin parar.";
                 break;
             case 5:
                 stopSound(choose);
                 choose = "cuatro";
-                newMarkAnchorNode.setRenderable(cuatro);
+                andy.setRenderable(cuatro);
                 audio4.start();
                 information = "El número cuatro es una sillita que invita a descansar.";
                 break;
             case 6:
                 stopSound(choose);
                 choose = "cinco";
-                newMarkAnchorNode.setRenderable(cinco);
+                andy.setRenderable(cinco);
                 audio5.start();
                 information = "El número cinco tiene orejas, parece un conejito.";
                 break;
@@ -638,28 +639,28 @@ public class NumerosA extends AppCompatActivity {
             case 7:
                 stopSound(choose);
                 choose = "seis";
-                newMarkAnchorNode.setRenderable(seis);
+                andy.setRenderable(seis);
                 audio6.start();
                 information = "El número seis es una pera redonda y con rabito.";
                 break;
             case 8:
                 stopSound(choose);
                 choose = "siete";
-                newMarkAnchorNode.setRenderable(siete);
+                andy.setRenderable(siete);
                 audio7.start();
                 information = "El número siete es un sereno con gorra y con bastón.";
                 break;
             case 9:
                 stopSound(choose);
                 choose = "ocho";
-                newMarkAnchorNode.setRenderable(ocho);
+                andy.setRenderable(ocho);
                 audio8.start();
                 information = "El número ocho son las gafas que lleva don Ramón.";
                 break;
             case 10:
                 stopSound(choose);
                 choose = "nueve";
-                newMarkAnchorNode.setRenderable(nueve);
+                andy.setRenderable(nueve);
                 audio9.start();
                 information = "El número nueve es un globito atado a un cordel.";
                 break;
@@ -667,7 +668,7 @@ public class NumerosA extends AppCompatActivity {
             case 11:
                 stopSound(choose);
                 choose = "diez";
-                newMarkAnchorNode.setRenderable(diez);
+                andy.setRenderable(diez);
                 audio10.start();
                 information = "El número diez es un soldado que lleva un gran melón.";
                 break;

@@ -10,6 +10,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+
+import android.view.MotionEvent;
+
+
+
+
+
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -51,10 +58,9 @@ public class dActivity extends AppCompatActivity {
     //****************************************************************
     private List<AnchorNode> anchorNodeList = new ArrayList<>();
     private AnchorNode currentSelectedAnchorNode = null;
-    private ModelRenderable tiburon1;
-    // (dog), cat, (rabbit), (gallina), (caballo),(pajaro), (pato), (vaca)
     private ModelRenderable gato1,dog1,rabbit1,chicken1,horse1,bird1,duck1,cow1;
-    private ModelRenderable iguana2;
+
+
     private int Status1 = 0;
     private String information = "";
     private String choose = "";
@@ -124,6 +130,9 @@ public class dActivity extends AppCompatActivity {
                     builder.setMessage("Something is not right gato1" + throwable.getMessage()).show();
                     return null;
                 });
+
+
+
         /*
         ModelRenderable.builder()
                 .setSource(this, R.raw.iguana02)
@@ -369,10 +378,25 @@ public class dActivity extends AppCompatActivity {
                 if (currentSelectedAnchorNode != null) {
                     //Get the current Pose and transform it then set a new anchor at the new pose
                     Session session = arCam.getArSceneView().getSession();
+
+
+
                     Anchor currentAnchor = currentSelectedAnchorNode.getAnchor();
                     Pose oldPose = currentAnchor.getPose();
                     Pose newPose = oldPose.compose(Pose.makeTranslation(0,0.05f,0));
                     currentSelectedAnchorNode = moveRenderable(currentSelectedAnchorNode, newPose);
+
+
+                    /*
+                    TransformableNode andy = new TransformableNode(arCam.getTransformationSystem());
+                    andy.setParent(currentSelectedAnchorNode);
+                    andy.setRenderable(rabbit1);
+                    andy.select();
+                    */
+
+
+
+
                 }
             }
         });
@@ -614,10 +638,13 @@ public class dActivity extends AppCompatActivity {
             //Log.d(TAG,"moveRenderable - markAnchorNode was null, the little £$%^...");
             return null;
         }
+
         Frame frame = arCam.getArSceneView().getArFrame();
         Session session = arCam.getArSceneView().getSession();
         Anchor markAnchor = session.createAnchor(newPoseToMoveTo.extractTranslation());
         AnchorNode newMarkAnchorNode = new AnchorNode(markAnchor);
+        TransformableNode andy = new TransformableNode(arCam.getTransformationSystem());
+        andy.setParent(newMarkAnchorNode);
 
         switch(Status1)
         {
@@ -625,7 +652,7 @@ public class dActivity extends AppCompatActivity {
 
                 stopSound(choose);
                 choose = "gato";
-                newMarkAnchorNode.setRenderable(gato1);
+                andy.setRenderable(gato1);
                 audiogCat.start();
                 information = "Mamífero de contextura pequeña, de abundante pelaje y muy suave, son muy cariñoso con los humanos.";
 
@@ -635,49 +662,49 @@ public class dActivity extends AppCompatActivity {
                 //newMarkAnchorNode.setRenderable(iguana2);
                 stopSound(choose);
                 choose = "pajaro";
-                newMarkAnchorNode.setRenderable(bird1);
+                andy.setRenderable(bird1);
                 audiogBird.start();
                 information = "Las aves son seres extraordinarios y fascinantes: muchas de ellas poseen un plumaje colorido, producen sonidos extraordinarios o pueden volar.";
             break;
             case 3:
                 stopSound(choose);
                 choose = "gallina";
-                newMarkAnchorNode.setRenderable(chicken1);
+                andy.setRenderable(chicken1);
                 audiogChicken.start();
                 information = "La gallina es denominado un ave conocida por su cacareo, pone huevos, y está cubierta de plumas de diversos colores";
                 break;
             case 4:
                 stopSound(choose);
                 choose = "vaca";
-                newMarkAnchorNode.setRenderable(cow1);
+                andy.setRenderable(cow1);
                 audiogCow.start();
                 information = "La vaca es un animal mamífero, se alimenta del pasto, hierbas, tallos, hojas, semillas y raíces.";
                 break;
             case 5:
                 stopSound(choose);
                 choose = "perro";
-                newMarkAnchorNode.setRenderable(dog1);
+                andy.setRenderable(dog1);
                 audiogDog.start();
                 information = "El perro doméstico es un mamífero carnívoro, Su tamaño, forma y pelaje varían en función de la raza de perro, ven bien, usan mayormente su oído y su olfato, sentidos que tienen muy desarrollados y que son muy prácticos para el humano.";
                 break;
             case 6:
                 stopSound(choose);
                 choose = "pato";
-                newMarkAnchorNode.setRenderable(duck1);
+                andy.setRenderable(duck1);
                 audiogDuck.start();
                 information = "El pato es un ave, vive cerca del agua y nadan.";
                 break;
             case 7:
                 stopSound(choose);
                 choose = "caballo";
-                newMarkAnchorNode.setRenderable(horse1);
+                andy.setRenderable(horse1);
                 audiogHorse.start();
                 information = "Un Caballo es un animal cuadrúpedo perteneciente a la especie de los mamíferos, se caracteriza por su gran tamaño, son animales que galopan y relinchan";
                 break;
             case 8:
                 stopSound(choose);
                 choose = "conejo";
-                newMarkAnchorNode.setRenderable(rabbit1);
+                andy.setRenderable(rabbit1);
                 audiogRabbit.start();
                 information = "Son animales que tienen muy buena relación con los humanos, ya que son muy amistosos y agradables.";
                 break;

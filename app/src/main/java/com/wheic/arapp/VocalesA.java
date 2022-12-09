@@ -441,13 +441,14 @@ public class VocalesA extends AppCompatActivity {
         Session session = arCam.getArSceneView().getSession();
         Anchor markAnchor = session.createAnchor(newPoseToMoveTo.extractTranslation());
         AnchorNode newMarkAnchorNode = new AnchorNode(markAnchor);
-
+        TransformableNode andy = new TransformableNode(arCam.getTransformationSystem());
+        andy.setParent(newMarkAnchorNode);
         switch(Status1)
         {
             case 1:
                 stopSound(choose);
                 choose = "a";
-                newMarkAnchorNode.setRenderable(vocala);
+                andy.setRenderable(vocala);
                 information = "A de avión.";
                 //audioa.start();
             break;
@@ -455,28 +456,28 @@ public class VocalesA extends AppCompatActivity {
             case 2:
                 stopSound(choose);
                 choose = "e";
-                newMarkAnchorNode.setRenderable(vocale);
+                andy.setRenderable(vocale);
                 //audioe.start();
                 information = "E de escalera.";
             break;
             case 3:
                 stopSound(choose);
                 choose = "i";
-                newMarkAnchorNode.setRenderable(vocali);
+                andy.setRenderable(vocali);
                 //audioi.start();
                 information = "I de iglesia.";
                 break;
             case 4:
                 stopSound(choose);
                 choose = "o";
-                newMarkAnchorNode.setRenderable(vocalo);
+                andy.setRenderable(vocalo);
                 //audioo.start();
                 information = "O de oso.";
                 break;
             case 5:
                 stopSound(choose);
                 choose = "u";
-                newMarkAnchorNode.setRenderable(vocalu);
+                andy.setRenderable(vocalu);
                 //audiou.start();
                 information = "U de uva.";
                 break;

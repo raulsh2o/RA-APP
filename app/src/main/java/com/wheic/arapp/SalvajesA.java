@@ -586,41 +586,42 @@ public class SalvajesA extends AppCompatActivity {
         Session session = arCam.getArSceneView().getSession();
         Anchor markAnchor = session.createAnchor(newPoseToMoveTo.extractTranslation());
         AnchorNode newMarkAnchorNode = new AnchorNode(markAnchor);
-
+        TransformableNode andy = new TransformableNode(arCam.getTransformationSystem());
+        andy.setParent(newMarkAnchorNode);
         switch(Status1)
         {
             case 1:
                 stopSound(choose);
                 choose = "mono";
-                newMarkAnchorNode.setRenderable(monkey1);
+                andy.setRenderable(monkey1);
                 audiogMonkey.start();
                 information = "El mono es proveniente de la familia de los primates, usas sus extremidades para cazar, comer o hacer otras acciones diferentes.";
             break;
             case 2:
                 stopSound(choose);
                 choose = "leon";
-                newMarkAnchorNode.setRenderable(lion1);
+                andy.setRenderable(lion1);
                 audiogLion.start();
                 information = "El león es el rey de la selva, es salvaje, fuerte, grande y tiene dientes muy grandes.";
                 break;
             case 3:
                 stopSound(choose);
                 choose = "tigre";
-                newMarkAnchorNode.setRenderable(tiger1);
+                andy.setRenderable(tiger1);
                 audiogTiger.start();
                 information = "El tigre es un animal grande, corren muy rápido, son solitarios y cazadores.";
                 break;
             case 4:
                 stopSound(choose);
                 choose = "elefante";
-                newMarkAnchorNode.setRenderable(elephant1);
+                andy.setRenderable(elephant1);
                 audiogElephant.start();
                 information = "El elefante es el animal terrestre más grande, tiene orejas grandes y su trompa muy larga, tienen ojos pequeños.";
                 break;
             case 5:
                 stopSound(choose);
                 choose = "serpiente";
-                newMarkAnchorNode.setRenderable(serpiente01);
+                andy.setRenderable(serpiente01);
                 audiogSerpent.start();
                 information = "\n" +
                         "La serpiente es un animal que se arrastra por el suelo, no tiene patas, vota veneno por su boca, su cuerpo es muy largo.";
@@ -628,7 +629,7 @@ public class SalvajesA extends AppCompatActivity {
             case 6:
                 stopSound(choose);
                 choose = "jirafa";
-                newMarkAnchorNode.setRenderable(giraffe1);
+                andy.setRenderable(giraffe1);
                 audiogJirafa.start();
                 information = "Las jirafas son animales de cuello largo, son de color amarillo con manchas negras y tiene dos cuernos pequeños.";
                 break;
@@ -636,14 +637,14 @@ public class SalvajesA extends AppCompatActivity {
             case 7:
                 stopSound(choose);
                 choose = "hipopotamo";
-                newMarkAnchorNode.setRenderable(hipopo1);
+                andy.setRenderable(hipopo1);
                 audiogHipopo.start();
                 information = "El hipopótamo es un animal de boca enorme con grandes dientes, son grandes y pesados, son muy agresivos y de patas cortas.";
                 break;
             case 8:
                 stopSound(choose);
                 choose = "cocodrilo";
-                newMarkAnchorNode.setRenderable(crocodrile1);
+                andy.setRenderable(crocodrile1);
                 audiogCocodrile.start();
                 information = "El cocodrilo   es un animal con 4 patas, se arrastra por el suelo, con una boca enorme y dientes muy grandes, tiene una cola muy larga, y viven en los pantanos, lagos o ríos.";
                 break;
